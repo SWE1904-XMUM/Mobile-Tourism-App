@@ -39,7 +39,7 @@ public class Bookmarks extends Fragment
         bookmarkRecyclerView = view.findViewById(R.id.bookmarkRecyclerView);
 
         storeDataIntoList();
-        setUpRecyclerView();
+        updateRecyclerView();
     }
 
     private void storeDataIntoList()
@@ -48,7 +48,7 @@ public class Bookmarks extends Fragment
         bookmarkList = BookmarkDb.getUserBookmarkByUsername(uname);
     }
 
-    private void setUpRecyclerView()
+    public void updateRecyclerView()
     {
         BookmarkAdapter bookmarkAdapter = new BookmarkAdapter(getActivity(), bookmarkList, (AppCompatActivity) getActivity());
         bookmarkRecyclerView.setAdapter(bookmarkAdapter);

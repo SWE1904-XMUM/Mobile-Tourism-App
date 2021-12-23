@@ -43,7 +43,6 @@ public class Explore extends Fragment
     private void setUpRecyclerView()
     {
         HotelAdapter hotelAdapter = new HotelAdapter(getActivity(), hotelList, (AppCompatActivity) getActivity());
-        hotelAdapter.notifyDataSetChanged();
         hotelRecyclerView.setAdapter(hotelAdapter);
         hotelRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
