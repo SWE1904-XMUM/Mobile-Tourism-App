@@ -5,8 +5,25 @@
     android:layout_height="match_parent"
     tools:context=".fragment.Bookmarks">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/bookmarkRecyclerView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="660dp">
+        <TextView
+            android:id="@+id/bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Click on bookmark to view in browser"
+            android:textColor="@color/dark_green"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bookmarkRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/bookmark"
+            android:layout_marginTop="10dp" />
+    </RelativeLayout>
 </FrameLayout>

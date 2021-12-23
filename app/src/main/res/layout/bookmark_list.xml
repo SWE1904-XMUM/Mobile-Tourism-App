@@ -6,7 +6,9 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/bookmarkCard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="120dp"
+        android:layout_marginVertical="5dp"
+        android:clickable="true">
 
         <LinearLayout
             android:layout_width="match_parent"

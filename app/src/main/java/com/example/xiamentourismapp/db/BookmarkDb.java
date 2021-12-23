@@ -42,11 +42,9 @@ public class BookmarkDb
             do
             {
                 bookmarkList.add(new Bookmark(null,uname,c.getString(0),c.getString(1),c.getString(2),c.getInt(3)));
-                return bookmarkList;
             }
             while(c.moveToNext());
         }
-
         return bookmarkList;
     }
 
