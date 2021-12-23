@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/top10Card"
@@ -10,78 +10,57 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="3dp"
-            android:orientation="vertical" >
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/tourismImgList"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="15dp"
+                android:padding="3dp"
+                android:src="@drawable/gulangyu_island"/>
 
             <LinearLayout
-
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="3dp"
-                android:layout_marginBottom="3dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
                 android:layout_gravity="center"
-                android:padding="2dp"
-                android:orientation="vertical">
+                android:padding="3dp"
+                android:orientation="vertical" >
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/top10List"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Tourism Name"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
-                    <ImageView
-                        android:id="@+id/tourismImgList"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="15dp"
-                        android:padding="3dp"
-                        android:src="@drawable/gulangyu_island"/>
+                <TextView
+                    android:id="@+id/descriptionList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:text="Descriptions"
+                    android:textColor="@android:color/secondary_text_light"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="15dp"
-                        android:layout_gravity="center"
-                        android:padding="3dp"
-                        android:orientation="vertical" >
-
-                        <TextView
-                            android:id="@+id/top10List"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="1dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="1dp"
-                            android:layout_marginBottom="3dp"
-                            android:text="Tourism Name"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/descriptionList"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="1dp"
-                            android:layout_marginTop="1dp"
-                            android:layout_marginEnd="1dp"
-                            android:layout_marginBottom="1dp"
-                            android:text="Descriptions"
-                            android:textColor="@android:color/secondary_text_light"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
             </LinearLayout>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

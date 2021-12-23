@@ -20,7 +20,6 @@ import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.constant.RequestCode;
 import com.example.xiamentourismapp.db.BookmarkDb;
 import com.example.xiamentourismapp.entity.Bookmark;
-import com.example.xiamentourismapp.fragment.Bookmarks;
 import com.example.xiamentourismapp.utils.ui.ToastCreator;
 
 import java.util.List;

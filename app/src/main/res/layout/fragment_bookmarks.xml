@@ -5,14 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".fragment.Bookmarks">
 
-    <RelativeLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bookmarkRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="660dp">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/bookmarkRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp" />
-    </RelativeLayout>
+        android:layout_height="match_parent" />
 </FrameLayout>
