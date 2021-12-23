@@ -93,80 +93,9 @@ public class Profile extends Fragment
             @Override
             public void onClick(View view)
             {
-                if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
-                {
-                    Permissions.grantPhotoPermission(getActivity());
-                }
-                SelectImg.selectImgOptions(getActivity(), (AppCompatActivity) getActivity());
+                FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getUploadProfileFragment());
             }
         });
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (resultCode != RESULT_CANCELED)
-        {
-            switch (requestCode)
-            {
-                case RequestCode.SNAP_PHOTO:
-                    if (resultCode == RESULT_OK && data != null)
-                    {
-                        Bitmap capturedImg = (Bitmap) data.getExtras().get(String.valueOf(data));
-                        uploadProfileBtn.setImageBitmap(capturedImg);
-                        //items.get(clickedItem).image = ImageUtil.bitmapToByteArray(capturedImg);
-                    }
-                    break;
-
-                case RequestCode.CHOOSE_FROM_GALLERY:
-                    if (resultCode == RESULT_OK && data != null)
-                    {
-                        Uri selectedImage = data.getData();
-                        String[] filePath = {MediaStore.Images.Media.DATA};
-
-                        if (selectedImage != null)
-                        {
-                            Cursor cursor = getActivity().getContentResolver().query(selectedImage,filePath,null,null,null);
-
-                            if (cursor != null)
-                            {
-                                cursor.moveToFirst();
-
-                                int colInd = cursor.getColumnIndex(filePath[0]);
-                                String imgPath = cursor.getString(colInd);
-                                uploadProfileBtn.setImageBitmap(BitmapFactory.decodeFile(imgPath));
-                                cursor.close();
-                            }
-                        }
-
-                        /*if (selectedImage != null)
-                        {
-                            Cursor cursor = getContentResolver().query(selectedImage, filePath, null, null, null);
-
-                            if (cursor != null)
-                            {
-                                cursor.moveToFirst();
-
-                                int colInd = cursor.getColumnIndex(filePath[0]);
-                                String imgPath = cursor.getString(colInd);
-
-                                try
-                                {
-                                    //items.get(clickedItem).image = ImageUtil.bitmapToByteArray(MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImage));
-                                }
-
-                                catch (IOException e)
-                                {
-                                    e.printStackTrace();
-                                }
-                                cursor.close();
-                            }
-                        }*/
-                    }
-                    break;
-            }
-        }
     }
 
     @Override
