@@ -4,7 +4,9 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import com.example.xiamentourismapp.entity.Bookmark;
-import com.example.xiamentourismapp.utils.ImageUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BookmarkDb
 {
@@ -29,20 +31,23 @@ public class BookmarkDb
         return insert > 0;
     }
 
-    public static Bookmark getUserBookmarkByUsername(String uname)
+    public static List<Bookmark> getUserBookmarkByUsername(String uname)
     {
+        List<Bookmark> bookmarkList = new ArrayList<>();
+
         Cursor c = db.rawQuery("select bookmarkName, bookmarkLink, bookmarkPhone, bookmarkImage from bookmarks where username=?", new String[]{uname});
 
         if (c.moveToFirst())
         {
             do
             {
-                return new Bookmark(null,uname,c.getString(0),c.getString(1),c.getString(2),c.getInt(3));
+                bookmarkList.add(new Bookmark(null,uname,c.getString(0),c.getString(1),c.getString(2),c.getInt(3)));
+                return bookmarkList;
             }
             while(c.moveToNext());
         }
 
-        return new Bookmark();
+        return bookmarkList;
     }
 
     public static int getBookmarkIdByBookmarkName(String bookmarkName)
