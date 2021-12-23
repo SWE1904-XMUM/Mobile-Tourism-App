@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.Home">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/videoFrame">
+
+        <VideoView
+            android:id="@+id/aboutXiamenVideo"
+            android:layout_width="match_parent"
+            android:layout_height="270dp" />
+    </FrameLayout>
+
+    <TextView
+        android:paddingLeft="10dp"
+        android:id="@+id/top10TouristAttractions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Top 10 Tourist Attractions"
+        android:textColor="@color/dark_green"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/top10RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top10TouristAttractions"
+        android:layout_marginTop="20dp" />
+</LinearLayout>

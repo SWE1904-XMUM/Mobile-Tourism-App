@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/1. Gulangyu Island_foreground.xml" value="0.2388888888888889" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/add_bookmark_icon.xml" value="0.2462962962962963" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/add_icon.xml" value="0.1712962962962963" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/bookmarks_icon.xml" value="0.23981481481481481" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/call_icon.xml" value="0.2462962962962963" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/home_icon.xml" value="0.2611111111111111" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/info_icon.xml" value="0.2611111111111111" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/logout_icon.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/profile_icon.xml" value="0.1712962962962963" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/travel_explore_icon.xml" value="0.23981481481481481" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/activity_signup.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_add.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_container.xml" value="0.2359375" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_edit_profile.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_explore.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_info.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_upload_profile.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/hotel_list.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/login.xml" value="0.264" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/signup.xml" value="0.264" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/startup.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/top10list.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/tourism_list.xml" value="0.4" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/menu/bottom_navigation_bar.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/menu/profile_menu.xml" value="0.4" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/mipmap-anydpi-v26/1. Gulangyu Island.xml" value="0.2388888888888889" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
