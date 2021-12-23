@@ -19,7 +19,12 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.constant.RequestCode;
+import com.example.xiamentourismapp.db.BookmarkDb;
+import com.example.xiamentourismapp.entity.Bookmark;
 import com.example.xiamentourismapp.entity.Hotel;
+import com.example.xiamentourismapp.manager.session.SessionManager;
+import com.example.xiamentourismapp.utils.ui.ToastCreator;
+
 import java.util.List;
 
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>
@@ -87,7 +92,18 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>
             @Override
             public void onClick(View view)
             {
-                // TODO -> add to bookmark db
+                String uname = SessionManager.getUsername();
+                boolean insertBookmark = BookmarkDb.insertBookmark(uname,hotelList.get(position).hotelName,hotelList.get(position).hotelLink,hotelList.get(position).hotelNo,hotelList.get(position).hotelImage);
+
+                if (insertBookmark)
+                {
+                    ToastCreator.createToast(activity,"Added to bookmark.");
+                }
+
+                else
+                {
+                    ToastCreator.createToast(activity,"Fail to add bookmark.");
+                }
             }
         });
     }

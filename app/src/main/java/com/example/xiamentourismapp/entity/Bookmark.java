@@ -9,14 +9,14 @@ public class Bookmark
     public String bookmarkName;
     public String bookmarkLink;
     public String bookmarkPhone;
-    public byte[] bookmarkImage;
+    public Integer bookmarkImage;
 
     public Bookmark()
     {
 
     }
 
-    public Bookmark(@Nullable Integer bookmarkId,String username, String bookmarkName, String bookmarkLink, String bookmarkPhone, byte[] bookmarkImage)
+    public Bookmark(@Nullable Integer bookmarkId,String username, String bookmarkName, String bookmarkLink, String bookmarkPhone, Integer bookmarkImage)
     {
         this.bookmarkId = bookmarkId;
         this.username = username;

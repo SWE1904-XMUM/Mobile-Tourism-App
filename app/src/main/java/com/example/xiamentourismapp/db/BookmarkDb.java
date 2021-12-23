@@ -16,10 +16,8 @@ public class BookmarkDb
     private static final String BOOKMARK_PHONE = "bookmarkPhone";
     private static final String BOOKMARK_IMAGE = "bookmarkImage";
 
-    public static boolean insertBookmark(String username,String bookmarkName,String bookmarkLink,String bookmarkPhone, byte[] bookmarkImage)
+    public static boolean insertBookmark(String username, String bookmarkName, String bookmarkLink, String bookmarkPhone, Integer bookmarkImage)
     {
-        //byte[] imgBytes = ImageUtil.imagePathToByteArray(bookmarkImage);
-
         ContentValues cv = new ContentValues();
         cv.put(USERNAME,username);
         cv.put(BOOKMARK_NAME,bookmarkName);
@@ -39,7 +37,7 @@ public class BookmarkDb
         {
             do
             {
-                return new Bookmark(null,uname,c.getString(0),c.getString(1),c.getString(2),c.getBlob(3));
+                return new Bookmark(null,uname,c.getString(0),c.getString(1),c.getString(2),c.getInt(3));
             }
             while(c.moveToNext());
         }

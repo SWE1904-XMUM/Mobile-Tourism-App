@@ -48,7 +48,7 @@ public class ConnectionProvider extends SQLiteOpenHelper
         db.execSQL("create table userProfile (profileId integer primary key autoincrement, username text not null, profileImage longblob not null)");
 
         // create bookmarks table
-        db.execSQL("create table bookmarks (bookmarkId integer primary key autoincrement, username text not null, bookmarkName text not null, bookmarkLink text not null, bookmarkPhone text not null,bookmarkImage longblob not null)");
+        db.execSQL("create table bookmarks (bookmarkId integer primary key autoincrement, username text not null, bookmarkName text not null, bookmarkLink text not null, bookmarkPhone text not null,bookmarkImage integer not null)");
     }
 
     @Override
