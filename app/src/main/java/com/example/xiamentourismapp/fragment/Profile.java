@@ -1,25 +1,11 @@
 package com.example.xiamentourismapp.fragment;
 
-import static android.Manifest.permission.CALL_PHONE;
-import static android.app.Activity.RESULT_CANCELED;
-import static android.app.Activity.RESULT_OK;
-
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -30,20 +16,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.xiamentourismapp.R;
-import com.example.xiamentourismapp.activity.FragmentContainer;
 import com.example.xiamentourismapp.activity.Login;
 import com.example.xiamentourismapp.constant.GetFragment;
-import com.example.xiamentourismapp.constant.RequestCode;
 import com.example.xiamentourismapp.db.UserDb;
 import com.example.xiamentourismapp.entity.User;
-import com.example.xiamentourismapp.entity.UserProfile;
 import com.example.xiamentourismapp.manager.FragmentManager;
 import com.example.xiamentourismapp.manager.session.SessionManager;
-import com.example.xiamentourismapp.utils.ImageUtil;
-import com.example.xiamentourismapp.utils.Permissions;
-import com.example.xiamentourismapp.utils.SelectImg;
-
-import java.io.IOException;
 
 public class Profile extends Fragment
 {
