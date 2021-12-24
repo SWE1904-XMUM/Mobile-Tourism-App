@@ -63,5 +63,6 @@ public class Transport extends Fragment
     private void storeDataIntoList()
     {
         transportList = new ArrayList<>();
+        transportList.add(new com.example.xiamentourismapp.entity.Transport(R.drawable.railway,"Xiamen Railway Station", "https://www.topchinatravel.com/xiamen/xiamen-railway-station.htm","01234"));
     }
 }
