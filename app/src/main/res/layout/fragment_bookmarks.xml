@@ -7,23 +7,43 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="660dp">
-        <TextView
-            android:id="@+id/bookmark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="Click on bookmark to view in browser"
-            android:textColor="@color/dark_green"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/bookmarkRecyclerView"
+        android:layout_height="600dp">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/bookmark"
-            android:layout_marginTop="10dp" />
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <FrameLayout
+                android:id="@+id/sortTransportFrame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp">
+
+                <TextView
+                    android:id="@+id/bookmark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Click on bookmark to view in browser"
+                    android:textColor="@color/dark_green"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sortTransportFrame"
+                android:layout_marginBottom="?attr/actionBarSize">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/bookmarkRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/bookmark"
+                    android:layout_marginTop="10dp" />
+            </FrameLayout>
+        </LinearLayout>
     </RelativeLayout>
 </FrameLayout>
