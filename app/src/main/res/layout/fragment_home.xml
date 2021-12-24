@@ -24,7 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Top 10 Tourist Attractions"
-        android:textColor="@color/dark_green"
         android:textSize="30dp"
         android:textStyle="bold" />
 

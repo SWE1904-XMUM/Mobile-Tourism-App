@@ -26,7 +26,6 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:text="Click on bookmark to view in browser"
-                    android:textColor="@color/dark_green"
                     android:textSize="20dp"
                     android:textStyle="bold" />
             </FrameLayout>
