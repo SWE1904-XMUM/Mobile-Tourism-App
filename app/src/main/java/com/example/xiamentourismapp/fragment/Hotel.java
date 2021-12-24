@@ -26,7 +26,7 @@ public class Hotel extends Fragment
     private RecyclerView hotelRecyclerView;
     private List<com.example.xiamentourismapp.entity.Hotel> hotelList;
     private Spinner sortRating;
-    private String[] exploreRating;
+    private String[] hotelRating;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -51,8 +51,8 @@ public class Hotel extends Fragment
 
     private void setRatingSortList()
     {
-        exploreRating = getResources().getStringArray(R.array.exploreRating);
-        ArrayAdapter<String> ratingAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, exploreRating);
+        hotelRating = getResources().getStringArray(R.array.exploreRating);
+        ArrayAdapter<String> ratingAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, hotelRating);
         ratingAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sortRating.setAdapter(ratingAdapter);
     }
