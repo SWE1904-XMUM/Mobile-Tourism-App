@@ -9,27 +9,18 @@
         android:layout_width="match_parent"
         android:layout_height="660dp">
 
-        <TextView
-            android:id="@+id/food"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="Food"
-            android:textColor="@color/dark_green"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <FrameLayout
-                android:layout_width="145dp"
+                android:id="@+id/sortFoodFrame"
+                android:layout_width="155dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:layout_margin="255dp">
+                android:layout_margin="15dp">
 
                 <Spinner
                     android:id="@+id/sortFoodRating"
@@ -37,14 +28,24 @@
                     android:layout_height="match_parent"
                     android:minHeight="30dp" />
             </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sortFoodFrame"
+                android:layout_marginBottom="?attr/actionBarSize">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/foodRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="3dp" />
+            </FrameLayout>
         </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/foodRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/food"
-            android:layout_marginTop="20dp" />
     </RelativeLayout>
-
 </FrameLayout>
