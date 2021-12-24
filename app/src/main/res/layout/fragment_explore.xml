@@ -5,59 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".fragment.Explore">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="660dp">
-
-        <TextView
-            android:id="@+id/hotel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="Hotel"
-            android:textColor="@color/dark_green"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
-            <FrameLayout
-                android:id="@+id/sortFrame"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_margin="5dp">
-
-                <Spinner
-                    android:id="@+id/sortExplore"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:minHeight="30dp" />
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/sortRatingFrame"
-                android:layout_width="145dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_margin="100dp">
-
-                <Spinner
-                    android:id="@+id/sortRating"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:minHeight="30dp" />
-            </FrameLayout>
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/hotelRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/hotel"
-            android:layout_marginTop="20dp" />
-    </RelativeLayout>
+    <ImageView
+        android:id="@+id/hotelBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:minWidth="50dp"
+        android:src="@drawable/hotel_icon"/>
 </FrameLayout>

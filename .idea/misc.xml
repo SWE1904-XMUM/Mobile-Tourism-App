@@ -11,6 +11,7 @@
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/call_icon.xml" value="0.2462962962962963" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/delete_icon.xml" value="0.21510416666666668" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/home_icon.xml" value="0.2611111111111111" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/hotel_icon.xml" value="0.2490740740740741" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/info_icon.xml" value="0.2611111111111111" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/logout_icon.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/profile_icon.xml" value="0.1712962962962963" />
@@ -24,6 +25,7 @@
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_edit_profile.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_explore.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_hotel.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_info.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_upload_profile.xml" value="0.25" />
