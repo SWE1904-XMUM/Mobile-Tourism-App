@@ -1,24 +1,19 @@
 package com.example.xiamentourismapp.fragment;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-
 import com.example.xiamentourismapp.R;
-import com.example.xiamentourismapp.adapter.HotelAdapter;
-import com.example.xiamentourismapp.entity.Hotel;
-
+import com.example.xiamentourismapp.adapter.FoodAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +41,7 @@ public class Food extends Fragment
         sortRating = view.findViewById(R.id.sortFoodRating);
 
         setRatingSortList();
-        storeDataIntoHotelList();
+        storeDataIntoFoodList();
         setUpRecyclerView();
     }
 
@@ -60,12 +55,12 @@ public class Food extends Fragment
 
     private void setUpRecyclerView()
     {
-        HotelAdapter hotelAdapter = new HotelAdapter(getActivity(), foodList, (AppCompatActivity) getActivity());
-        foodRecyclerView.setAdapter(hotelAdapter);
+        FoodAdapter foodAdapter = new FoodAdapter(getActivity(), foodList, (AppCompatActivity) getActivity());
+        foodRecyclerView.setAdapter(foodAdapter);
         foodRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 
-    private void storeDataIntoHotelList()
+    private void storeDataIntoFoodList()
     {
         foodList = new ArrayList<>();
     }
