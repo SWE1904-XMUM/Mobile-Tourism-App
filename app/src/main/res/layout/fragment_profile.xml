@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginVertical="20dp"
-        android:layout_marginHorizontal="40dp"
+        android:layout_marginHorizontal="80dp"
         android:orientation="vertical">
 
         <Button
@@ -91,7 +91,5 @@
             android:textSize="13dp"
             android:layout_marginVertical="5dp"
             android:textStyle="bold" />
-
     </LinearLayout>
-
 </FrameLayout>

@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Xiamen Tourism App</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="exploreItem">
+        <item>hotel</item>
+        <item>food</item>
+        <item>transport</item>
+    </string-array>
+
+    <string-array name="exploreRating">
+        <item>highest</item>
+        <item>lowest</item>
+    </string-array>
 </resources>

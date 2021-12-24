@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.adapter.HotelAdapter;
 import com.example.xiamentourismapp.entity.Hotel;
@@ -20,6 +23,8 @@ public class Explore extends Fragment
 {
     private RecyclerView hotelRecyclerView;
     private List<Hotel> hotelList;
+    private Spinner sortExplore,sortRating;
+    private String[] exploreItem,exploreRating;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -35,9 +40,29 @@ public class Explore extends Fragment
 
         // set view component
         hotelRecyclerView = view.findViewById(R.id.hotelRecyclerView);
+        sortExplore = view.findViewById(R.id.sortExplore);
+        sortRating = view.findViewById(R.id.sortRating);
 
+        setExploreSortList();
+        setRatingSortList();
         storeDataIntoList();
         setUpRecyclerView();
+    }
+
+    private void setExploreSortList()
+    {
+        exploreItem = getResources().getStringArray(R.array.exploreItem);
+        ArrayAdapter<String> exploreAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, exploreItem);
+        exploreAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sortExplore.setAdapter(exploreAdapter);
+    }
+
+    private void setRatingSortList()
+    {
+        exploreRating = getResources().getStringArray(R.array.exploreRating);
+        ArrayAdapter<String> ratingAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, exploreRating);
+        ratingAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sortRating.setAdapter(ratingAdapter);
     }
 
     private void setUpRecyclerView()
