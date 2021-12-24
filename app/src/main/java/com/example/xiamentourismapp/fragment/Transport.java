@@ -10,16 +10,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.adapter.TransportAdapter;
+import com.example.xiamentourismapp.utils.comparator.SortComparator;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Transport extends Fragment
 {
     private RecyclerView transportRecyclerView;
+    private TransportAdapter transportAdapter;
     private List<com.example.xiamentourismapp.entity.Transport> transportList;
     private Spinner sort;
     private String[] transportSort;
@@ -43,6 +47,35 @@ public class Transport extends Fragment
         setRatingSortList();
         storeDataIntoList();
         setUpRecyclerView();
+
+        // button click
+        sort.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                int index = adapterView.getSelectedItemPosition();
+
+                switch (index)
+                {
+                    case 0:
+                        transportList.sort(SortComparator.descending);
+                        transportAdapter.notifyDataSetChanged();
+                        break;
+
+                    case 1:
+                        transportList.sort(SortComparator.ascending);
+                        transportAdapter.notifyDataSetChanged();
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
+
+            }
+        });
     }
 
     private void setRatingSortList()
@@ -55,7 +88,7 @@ public class Transport extends Fragment
 
     private void setUpRecyclerView()
     {
-        TransportAdapter transportAdapter = new TransportAdapter(getActivity(), transportList, (AppCompatActivity) getActivity());
+        transportAdapter = new TransportAdapter(getActivity(), transportList, (AppCompatActivity) getActivity());
         transportRecyclerView.setAdapter(transportAdapter);
         transportRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
@@ -64,5 +97,6 @@ public class Transport extends Fragment
     {
         transportList = new ArrayList<>();
         transportList.add(new com.example.xiamentourismapp.entity.Transport(R.drawable.railway,"Xiamen Railway Station", "https://www.topchinatravel.com/xiamen/xiamen-railway-station.htm","01234"));
+        transportList.add(new com.example.xiamentourismapp.entity.Transport(R.drawable.bus,"FTBCI", "http://ftbcibus.com/","01234"));
     }
 }

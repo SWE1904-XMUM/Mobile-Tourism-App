@@ -18,7 +18,7 @@ import android.widget.Spinner;
 
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.adapter.HotelAdapter;
-import com.example.xiamentourismapp.utils.comparator.RatingComparator;
+import com.example.xiamentourismapp.utils.comparator.SortComparator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,12 +62,12 @@ public class Hotel extends Fragment
                 switch (index)
                 {
                     case 0:
-                        hotelList.sort(RatingComparator.highestHotel);
+                        hotelList.sort(SortComparator.highestHotel);
                         hotelAdapter.notifyDataSetChanged();
                         break;
 
                     case 1:
-                        hotelList.sort(RatingComparator.lowestHotel);
+                        hotelList.sort(SortComparator.lowestHotel);
                         hotelAdapter.notifyDataSetChanged();
                         break;
                 }

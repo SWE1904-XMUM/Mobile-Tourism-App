@@ -15,7 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.adapter.FoodAdapter;
-import com.example.xiamentourismapp.utils.comparator.RatingComparator;
+import com.example.xiamentourismapp.utils.comparator.SortComparator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,12 +59,12 @@ public class Food extends Fragment
                 switch (index)
                 {
                     case 0:
-                        foodList.sort(RatingComparator.highestFood);
+                        foodList.sort(SortComparator.highestFood);
                         foodAdapter.notifyDataSetChanged();
                         break;
 
                     case 1:
-                        foodList.sort(RatingComparator.lowestFood);
+                        foodList.sort(SortComparator.lowestFood);
                         foodAdapter.notifyDataSetChanged();
                         break;
                 }

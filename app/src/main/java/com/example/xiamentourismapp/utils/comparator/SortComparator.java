@@ -2,12 +2,13 @@ package com.example.xiamentourismapp.utils.comparator;
 
 import com.example.xiamentourismapp.entity.Food;
 import com.example.xiamentourismapp.entity.Hotel;
+import com.example.xiamentourismapp.entity.Transport;
 
 import java.util.Comparator;
 
-public class RatingComparator
+public class SortComparator
 {
-    public RatingComparator()
+    public SortComparator()
     {
 
     }
@@ -45,6 +46,24 @@ public class RatingComparator
         public int compare(Food f1, Food f2)
         {
             return f2.foodRating.compareTo(f1.foodRating);
+        }
+    };
+
+    public static Comparator<Transport> descending = new Comparator<Transport>()
+    {
+        @Override
+        public int compare(Transport t1, Transport t2)
+        {
+            return t1.transportName.compareTo(t2.transportName);
+        }
+    };
+
+    public static Comparator<Transport> ascending = new Comparator<Transport>()
+    {
+        @Override
+        public int compare(Transport t1, Transport t2)
+        {
+            return t2.transportName.compareTo(t1.transportName);
         }
     };
 }
