@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.constant.GetFragment;
+import com.example.xiamentourismapp.db.ConnectionProvider;
 import com.example.xiamentourismapp.manager.FragmentManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -15,6 +16,10 @@ public class FragmentContainer extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        //create database connection on startup
+        ConnectionProvider.getConnection(this.getApplicationContext());
+
         setContentView(R.layout.fragment_container);
 
         BottomNavigationView btmNav = findViewById(R.id.btmNav);
