@@ -13,4 +13,9 @@
         <item>highest</item>
         <item>lowest</item>
     </string-array>
+
+    <string-array name="sort">
+        <item>A-Z</item>
+        <item>Z-A</item>
+    </string-array>
 </resources>

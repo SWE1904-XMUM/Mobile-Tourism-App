@@ -23,7 +23,7 @@
                 android:layout_margin="15dp">
 
                 <Spinner
-                    android:id="@+id/sortTransportRating"
+                    android:id="@+id/sortTransport"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:minHeight="30dp" />

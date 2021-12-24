@@ -21,8 +21,8 @@ public class Transport extends Fragment
 {
     private RecyclerView transportRecyclerView;
     private List<com.example.xiamentourismapp.entity.Transport> transportList;
-    private Spinner sortRating;
-    private String[] transportRating;
+    private Spinner sort;
+    private String[] transportSort;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -38,7 +38,7 @@ public class Transport extends Fragment
 
         // set view component
         transportRecyclerView = view.findViewById(R.id.transportRecyclerView);
-        sortRating = view.findViewById(R.id.sortTransportRating);
+        sort = view.findViewById(R.id.sortTransport);
 
         setRatingSortList();
         storeDataIntoList();
@@ -47,10 +47,10 @@ public class Transport extends Fragment
 
     private void setRatingSortList()
     {
-        transportRating = getResources().getStringArray(R.array.exploreRating);
-        ArrayAdapter<String> ratingAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, transportRating);
+        transportSort = getResources().getStringArray(R.array.sort);
+        ArrayAdapter<String> ratingAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, transportSort);
         ratingAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sortRating.setAdapter(ratingAdapter);
+        sort.setAdapter(ratingAdapter);
     }
 
     private void setUpRecyclerView()
