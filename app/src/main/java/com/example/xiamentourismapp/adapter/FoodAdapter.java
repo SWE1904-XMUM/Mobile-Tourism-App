@@ -52,6 +52,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder>
     {
         holder.foodImageList.setImageResource(foodList.get(position).foodImg);
         holder.foodRestaurantList.setText(String.valueOf(foodList.get(position).foodRestaurant));
+        holder.foodRatingList.setText(String.valueOf(foodList.get(position).foodRating));
 
         holder.foodCard.setOnClickListener(new View.OnClickListener()
         {
@@ -113,7 +114,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder>
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {
-        private TextView foodRestaurantList;
+        private TextView foodRestaurantList,foodRatingList;
         private CardView foodCard;
         private ImageView foodImageList,foodAddBtnList,foodCallBtnList;
 
@@ -123,6 +124,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder>
 
             foodCard = itemView.findViewById(R.id.foodCard);
             foodRestaurantList = itemView.findViewById(R.id.foodRestaurantList);
+            foodRatingList = itemView.findViewById(R.id.foodRatingList);
             foodImageList = itemView.findViewById(R.id.foodImageList);
             foodCallBtnList = itemView.findViewById(R.id.foodCallBtnList);
             foodAddBtnList = itemView.findViewById(R.id.foodAddBtnList);
