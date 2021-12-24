@@ -10,16 +10,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.adapter.FoodAdapter;
+import com.example.xiamentourismapp.utils.comparator.RatingComparator;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Food extends Fragment
 {
     private RecyclerView foodRecyclerView;
+    private FoodAdapter foodAdapter;
     private List<com.example.xiamentourismapp.entity.Food> foodList;
     private Spinner sortRating;
     private String[] foodRating;
@@ -43,6 +47,35 @@ public class Food extends Fragment
         setRatingSortList();
         storeDataIntoFoodList();
         setUpRecyclerView();
+
+        // button clink
+        sortRating.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                int index = adapterView.getSelectedItemPosition();
+
+                switch (index)
+                {
+                    case 0:
+                        foodList.sort(RatingComparator.highestFood);
+                        foodAdapter.notifyDataSetChanged();
+                        break;
+
+                    case 1:
+                        foodList.sort(RatingComparator.lowestFood);
+                        foodAdapter.notifyDataSetChanged();
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
+
+            }
+        });
     }
 
     private void setRatingSortList()
@@ -55,7 +88,7 @@ public class Food extends Fragment
 
     private void setUpRecyclerView()
     {
-        FoodAdapter foodAdapter = new FoodAdapter(getActivity(), foodList, (AppCompatActivity) getActivity());
+        foodAdapter = new FoodAdapter(getActivity(), foodList, (AppCompatActivity) getActivity());
         foodRecyclerView.setAdapter(foodAdapter);
         foodRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }

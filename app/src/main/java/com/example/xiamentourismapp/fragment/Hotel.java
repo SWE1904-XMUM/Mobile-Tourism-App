@@ -12,11 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.adapter.HotelAdapter;
+import com.example.xiamentourismapp.utils.comparator.RatingComparator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,7 @@ import java.util.List;
 public class Hotel extends Fragment
 {
     private RecyclerView hotelRecyclerView;
+    private HotelAdapter hotelAdapter;
     private List<com.example.xiamentourismapp.entity.Hotel> hotelList;
     private Spinner sortRating;
     private String[] hotelRating;
@@ -47,6 +50,35 @@ public class Hotel extends Fragment
         setRatingSortList();
         storeDataIntoHotelList();
         setUpRecyclerView();
+
+        // button click
+        sortRating.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                int index = adapterView.getSelectedItemPosition();
+
+                switch (index)
+                {
+                    case 0:
+                        hotelList.sort(RatingComparator.highestHotel);
+                        hotelAdapter.notifyDataSetChanged();
+                        break;
+
+                    case 1:
+                        hotelList.sort(RatingComparator.lowestHotel);
+                        hotelAdapter.notifyDataSetChanged();
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
+
+            }
+        });
     }
 
     private void setRatingSortList()
@@ -59,7 +91,7 @@ public class Hotel extends Fragment
 
     private void setUpRecyclerView()
     {
-        HotelAdapter hotelAdapter = new HotelAdapter(getActivity(), hotelList, (AppCompatActivity) getActivity());
+        hotelAdapter = new HotelAdapter(getActivity(), hotelList, (AppCompatActivity) getActivity());
         hotelRecyclerView.setAdapter(hotelAdapter);
         hotelRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
