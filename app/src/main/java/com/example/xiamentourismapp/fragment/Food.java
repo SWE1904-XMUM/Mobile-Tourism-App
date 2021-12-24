@@ -63,5 +63,6 @@ public class Food extends Fragment
     private void storeDataIntoFoodList()
     {
         foodList = new ArrayList<>();
+        foodList.add(new com.example.xiamentourismapp.entity.Food(R.drawable.fragrance,"Fragrance Tea Palace", "https://www.trip.com/travel-guide/xiamen-21-restaurant/fragrance-tea-palace-31532292/","01234"));
     }
 }

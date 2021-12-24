@@ -51,7 +51,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder>
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position)
     {
         holder.foodImageList.setImageResource(foodList.get(position).foodImg);
-        holder.foodNameList.setText(foodList.get(position).foodName);
         holder.foodRestaurantList.setText(String.valueOf(foodList.get(position).foodRestaurant));
 
         holder.foodCard.setOnClickListener(new View.OnClickListener()
@@ -91,7 +90,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder>
             public void onClick(View view)
             {
                 String uname = SessionManager.getUsername();
-                boolean insertBookmark = BookmarkDb.insertBookmark(uname,foodList.get(position).foodName,foodList.get(position).foodLink,foodList.get(position).foodNo,foodList.get(position).foodImg);
+                boolean insertBookmark = BookmarkDb.insertBookmark(uname,foodList.get(position).foodRestaurant,foodList.get(position).foodLink,foodList.get(position).foodNo,foodList.get(position).foodImg);
 
                 if (insertBookmark)
                 {
@@ -114,7 +113,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder>
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {
-        private TextView foodNameList,foodRestaurantList;
+        private TextView foodRestaurantList;
         private CardView foodCard;
         private ImageView foodImageList,foodAddBtnList,foodCallBtnList;
 
@@ -123,7 +122,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder>
             super(itemView);
 
             foodCard = itemView.findViewById(R.id.foodCard);
-            foodNameList = itemView.findViewById(R.id.foodNameList);
             foodRestaurantList = itemView.findViewById(R.id.foodRestaurantList);
             foodImageList = itemView.findViewById(R.id.foodImageList);
             foodCallBtnList = itemView.findViewById(R.id.foodCallBtnList);
