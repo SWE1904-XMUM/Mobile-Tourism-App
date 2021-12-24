@@ -44,9 +44,6 @@ public class ConnectionProvider extends SQLiteOpenHelper
         // create users table
         db.execSQL("create table users (userId integer primary key autoincrement, username text unique, email text unique, phoneNo text, password text)");
 
-        // create userProfile table
-        db.execSQL("create table userProfile (profileId integer primary key autoincrement, username text not null, profileImage longblob not null)");
-
         // create bookmarks table
         db.execSQL("create table bookmarks (bookmarkId integer primary key autoincrement, username text not null, bookmarkName text not null, bookmarkLink text not null, bookmarkPhone text not null,bookmarkImage integer not null)");
     }
@@ -56,7 +53,6 @@ public class ConnectionProvider extends SQLiteOpenHelper
     {
         List<String> databases_name = new ArrayList<>();
         databases_name.add("users");
-        databases_name.add("userProfile");
         databases_name.add("bookmarks");
 
         for (int index = 0; index < databases_name.size(); index++)
