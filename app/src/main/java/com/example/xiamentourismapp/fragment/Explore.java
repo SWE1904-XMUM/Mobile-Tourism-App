@@ -45,7 +45,7 @@ public class Explore extends Fragment
 
         setExploreSortList();
         setRatingSortList();
-        storeDataIntoList();
+        storeDataIntoHotelList();
         setUpRecyclerView();
     }
 
@@ -72,7 +72,7 @@ public class Explore extends Fragment
         hotelRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 
-    private void storeDataIntoList()
+    private void storeDataIntoHotelList()
     {
         hotelList = new ArrayList<>();
         hotelList.add(new Hotel(R.drawable.lohkah_hotel,"Lohkah Hotel", 5.0F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d15197999-Reviews-Lohkah_Hotel_Spa-Xiamen_Fujian.html","01234"));
