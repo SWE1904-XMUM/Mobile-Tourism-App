@@ -5,11 +5,32 @@
     android:layout_height="match_parent"
     tools:context=".fragment.Explore">
 
-    <ImageView
-        android:id="@+id/hotelBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minHeight="50dp"
-        android:minWidth="50dp"
-        android:src="@drawable/hotel_icon"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:id="@+id/hotelBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:minWidth="50dp"
+            android:src="@drawable/hotel_icon"/>
+
+        <ImageView
+            android:id="@+id/foodBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:minWidth="50dp"
+            android:src="@drawable/food_icon"/>
+
+        <ImageView
+            android:id="@+id/transportBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:minWidth="50dp"
+            android:src="@drawable/transport_icon"/>
+    </LinearLayout>
 </FrameLayout>

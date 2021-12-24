@@ -25,7 +25,7 @@ import java.util.List;
 
 public class Explore extends Fragment
 {
-    private ImageView hotelBtn;
+    private ImageView hotelBtn,foodBtn,transportBtn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -41,6 +41,8 @@ public class Explore extends Fragment
 
         // set view component
         hotelBtn = view.findViewById(R.id.hotelBtn);
+        foodBtn = view.findViewById(R.id.foodBtn);
+        transportBtn = view.findViewById(R.id.transportBtn);
 
         // button click
         hotelBtn.setOnClickListener(new View.OnClickListener()
@@ -49,6 +51,24 @@ public class Explore extends Fragment
             public void onClick(View view)
             {
                 FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getHotelFragment());
+            }
+        });
+
+        foodBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getFoodFragment());
+            }
+        });
+
+        transportBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getTransportFragment());
             }
         });
     }
