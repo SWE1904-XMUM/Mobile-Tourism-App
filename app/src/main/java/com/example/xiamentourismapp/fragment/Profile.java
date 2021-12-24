@@ -27,7 +27,6 @@ public class Profile extends Fragment
 {
     private TextView profileUname,profileEmail,profilePhoneNo;
     private Button editProfileBtn;
-    private ImageView uploadProfileBtn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -47,7 +46,6 @@ public class Profile extends Fragment
         profileEmail = view.findViewById(R.id.profileEmail);
         profilePhoneNo = view.findViewById(R.id.profilePhoneNo);
         editProfileBtn = view.findViewById(R.id.editProfileBtn);
-        uploadProfileBtn = view.findViewById(R.id.uploadProfileBtn);
 
         // set profile text
         String uname = SessionManager.getUsername();
@@ -63,15 +61,6 @@ public class Profile extends Fragment
             public void onClick(View view)
             {
                 FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getEditProfileFragment());
-            }
-        });
-
-        uploadProfileBtn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getUploadProfileFragment());
             }
         });
     }
