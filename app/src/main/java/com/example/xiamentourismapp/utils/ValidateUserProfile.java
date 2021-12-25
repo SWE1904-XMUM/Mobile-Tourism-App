@@ -6,9 +6,9 @@ import android.widget.EditText;
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.utils.ui.SnackbarCreator;
 
-public class ValidateEditText
+public class ValidateUserProfile
 {
-    public ValidateEditText()
+    public ValidateUserProfile()
     {
 
     }

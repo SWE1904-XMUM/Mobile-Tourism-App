@@ -11,9 +11,7 @@ import android.widget.EditText;
 
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.db.UserDb;
-import com.example.xiamentourismapp.utils.ValidateEditText;
-import com.example.xiamentourismapp.utils.ValidationUtil;
-import com.example.xiamentourismapp.utils.ui.SnackbarCreator;
+import com.example.xiamentourismapp.utils.ValidateUserProfile;
 import com.example.xiamentourismapp.utils.ui.ToastCreator;
 
 public class Signup extends AppCompatActivity
@@ -44,13 +42,13 @@ public class Signup extends AppCompatActivity
 
                 if(UserDb.checkExistingUsername(unameTxt))
                 {
-                    ValidateEditText.setErrorBackgroundAndMessage(view,signupUname,"Username already exist, please try another.",getApplicationContext());
+                    ValidateUserProfile.setErrorBackgroundAndMessage(view,signupUname,"Username already exist, please try another.",getApplicationContext());
                     return;
                 }
 
                 if(UserDb.checkExistingEmail(emailTxt))
                 {
-                    ValidateEditText.setErrorBackgroundAndMessage(view,signupUname,"Email already exist, please try another.",getApplicationContext());
+                    ValidateUserProfile.setErrorBackgroundAndMessage(view,signupUname,"Email already exist, please try another.",getApplicationContext());
                     return;
                 }
 
@@ -96,22 +94,22 @@ public class Signup extends AppCompatActivity
 
     private boolean validateField(View view)
     {
-        if (!ValidateEditText.validateUnameField(getApplicationContext(),view,signupUname,unameTxt))
+        if (!ValidateUserProfile.validateUnameField(getApplicationContext(),view,signupUname,unameTxt))
         {
             return false;
         }
 
-        if (!ValidateEditText.validateEmailField(getApplicationContext(),view,signupEmail,emailTxt))
+        if (!ValidateUserProfile.validateEmailField(getApplicationContext(),view,signupEmail,emailTxt))
         {
             return false;
         }
 
-        if (!ValidateEditText.validatePhoneNoField(getApplicationContext(),view,signupPhoneNo,phoneNoTxt))
+        if (!ValidateUserProfile.validatePhoneNoField(getApplicationContext(),view,signupPhoneNo,phoneNoTxt))
         {
             return false;
         }
 
-        if (!ValidateEditText.validatePasswordField(getApplicationContext(),view,signupPwd,pwdTxt))
+        if (!ValidateUserProfile.validatePasswordField(getApplicationContext(),view,signupPwd,pwdTxt))
         {
             return false;
         }
