@@ -85,9 +85,6 @@ public class Login extends AppCompatActivity
 
                         if (verify)
                         {
-                            SessionManager.setSession(loginUnameTxt,getApplicationContext());
-                            SessionManager.setLogin(true);
-                            SessionManager.setUsername(loginUnameTxt);
                             loginUser();
                         }
 
@@ -113,6 +110,8 @@ public class Login extends AppCompatActivity
 
     private void loginUser()
     {
+        SessionManager.setSession(loginUnameTxt,getApplicationContext());
+        SessionManager.setUsername(loginUnameTxt);
         Intent home = new Intent(Login.this, FragmentContainer.class);
         startActivity(home);
     }

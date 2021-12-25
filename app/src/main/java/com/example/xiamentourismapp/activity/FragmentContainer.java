@@ -17,9 +17,6 @@ public class FragmentContainer extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
 
-        //create database connection on startup
-        ConnectionProvider.getConnection(this.getApplicationContext());
-
         setContentView(R.layout.fragment_container);
 
         BottomNavigationView btmNav = findViewById(R.id.btmNav);

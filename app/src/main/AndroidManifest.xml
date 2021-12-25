@@ -26,18 +26,15 @@
 
         <activity
             android:name=".activity.Signup"
-            android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"/>
+            android:exported="false" />
 
         <activity
             android:name=".activity.Login"
-            android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"/>
+            android:exported="false" />
 
         <activity
             android:name=".activity.StartUp"
-            android:exported="true"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
