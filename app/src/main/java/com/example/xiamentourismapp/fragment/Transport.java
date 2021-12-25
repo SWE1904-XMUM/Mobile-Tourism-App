@@ -96,7 +96,10 @@ public class Transport extends Fragment
     private void storeDataIntoList()
     {
         transportList = new ArrayList<>();
-        transportList.add(new com.example.xiamentourismapp.entity.Transport(R.drawable.railway,"Xiamen Railway Station", "https://www.topchinatravel.com/xiamen/xiamen-railway-station.htm","01234"));
-        transportList.add(new com.example.xiamentourismapp.entity.Transport(R.drawable.bus,"FTBCI", "http://ftbcibus.com/","01234"));
+        transportList.add(new com.example.xiamentourismapp.entity.Transport(R.drawable.railway,"Xiamen Railway Station", "https://www.topchinatravel.com/xiamen/xiamen-railway-station.htm","97988758"));
+        transportList.add(new com.example.xiamentourismapp.entity.Transport(R.drawable.bus,"FTBCI Bus", "http://ftbcibus.com/","0086-592-6880895"));
+        transportList.add(new com.example.xiamentourismapp.entity.Transport(R.drawable.airport,"Xiamen Gaoqi International Airport", "https://www.flightradar24.com/data/airports/xmn","+865925736975"));
+        transportList.add(new com.example.xiamentourismapp.entity.Transport(R.drawable.ferry,"Xiamen Ferry to Gulangyu Island", "https://www.chinadiscovery.com/xiamen-tours/transportation/get-to-gulangyu-island.html","35476575"));
+        transportList.add(new com.example.xiamentourismapp.entity.Transport(R.drawable.cable,"Zhonggu Cableway", "https://www.trip.com/travel-guide/attraction/xiamen/zhonggu-cableway-10521056/","9979652"));
     }
 }
