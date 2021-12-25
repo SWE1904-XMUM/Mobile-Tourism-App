@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.activity.FragmentContainer;
@@ -23,13 +24,17 @@ import com.example.xiamentourismapp.db.UserDb;
 import com.example.xiamentourismapp.entity.User;
 import com.example.xiamentourismapp.manager.FragmentManager;
 import com.example.xiamentourismapp.manager.session.SessionManager;
+import com.example.xiamentourismapp.utils.ValidateUserProfile;
 import com.example.xiamentourismapp.utils.ui.ToastCreator;
 
 public class EditProfile extends Fragment
 {
-    private TextView editUname,editEmail,editPhoneNo,editPwd;
+    private EditText editUname,editEmail,editPhoneNo,editPwd;
     private String editEmailTxt,editPhoneNoTxt,editPwdTxt;
     private Button updateProfileBtn;
+
+    // get username
+    String uname = SessionManager.getUsername();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -52,13 +57,7 @@ public class EditProfile extends Fragment
         updateProfileBtn = view.findViewById(R.id.updateProfileBtn);
 
         // display profile from db
-        String uname = SessionManager.getUsername();
-        User user = UserDb.getUserInfoByUsername(uname);
-        editUname.setText(uname);
-        editUname.setEnabled(false);
-        editEmail.setText(user.email);
-        editPhoneNo.setText(user.phoneNo);
-        editPwd.setText(user.password);
+        displayProfile();
 
         // button click
         updateProfileBtn.setOnClickListener(new View.OnClickListener()
@@ -67,13 +66,32 @@ public class EditProfile extends Fragment
             public void onClick(View view)
             {
                 updateTextView();
-                String uname = SessionManager.getUsername();
-                boolean updateProfile = UserDb.updateUserProfile(uname,editEmailTxt,editPhoneNoTxt,editPwdTxt);
 
-                if (updateProfile)
+                if (!validateField(view))
                 {
-                    ToastCreator.createToast(getActivity(),"Successfully updated!");
-                    FragmentManager.beginNewFragment((FragmentContainer) getActivity(), GetFragment.getProfileFragment());
+                    return;
+                }
+
+                if(UserDb.checkExistingEmail(editEmailTxt))
+                {
+                    ValidateUserProfile.setErrorBackgroundAndMessage(view,editEmail,"Email already exist, please try another.",getActivity());
+                    return;
+                }
+
+                else
+                {
+                    boolean updateProfile = UserDb.updateUserProfile(uname,editEmailTxt,editPhoneNoTxt,editPwdTxt);
+
+                    if (updateProfile)
+                    {
+                        ToastCreator.createToast(getActivity(),"Successfully updated!");
+                        FragmentManager.beginNewFragment((FragmentContainer) getActivity(), GetFragment.getProfileFragment());
+                    }
+
+                    else
+                    {
+                        ToastCreator.createToast(getActivity(),"Fail to update.");
+                    }
                 }
             }
         });
@@ -84,6 +102,39 @@ public class EditProfile extends Fragment
         editEmailTxt = editEmail.getText().toString();
         editPhoneNoTxt = editPhoneNo.getText().toString();
         editPwdTxt = editPwd.getText().toString();
+    }
+
+    private void displayProfile()
+    {
+        User user = UserDb.getUserInfoByUsername(uname);
+        editUname.setText(uname);
+        editUname.setEnabled(false);
+        editEmail.setText(user.email);
+        editPhoneNo.setText(user.phoneNo);
+        editPwd.setText(user.password);
+    }
+
+    private boolean validateField(View view)
+    {
+        if (!ValidateUserProfile.validateEmailField(getActivity(),view,editEmail,editEmailTxt))
+        {
+            return false;
+        }
+
+        if (!ValidateUserProfile.validatePhoneNoField(getActivity(),view,editPhoneNo,editPhoneNoTxt))
+        {
+            return false;
+        }
+
+        if (!ValidateUserProfile.validatePasswordField(getActivity(),view,editPwd,editPwdTxt))
+        {
+            return false;
+        }
+
+        else
+        {
+            return true;
+        }
     }
 
     @Override

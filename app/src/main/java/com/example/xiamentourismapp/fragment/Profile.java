@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.xiamentourismapp.R;
@@ -22,6 +23,7 @@ import com.example.xiamentourismapp.db.UserDb;
 import com.example.xiamentourismapp.entity.User;
 import com.example.xiamentourismapp.manager.FragmentManager;
 import com.example.xiamentourismapp.manager.session.SessionManager;
+import com.example.xiamentourismapp.utils.ValidateUserProfile;
 
 public class Profile extends Fragment
 {
@@ -48,11 +50,7 @@ public class Profile extends Fragment
         editProfileBtn = view.findViewById(R.id.editProfileBtn);
 
         // set profile text
-        String uname = SessionManager.getUsername();
-        User user = UserDb.getUserInfoByUsername(uname);
-        profileUname.setText(uname);
-        profileEmail.setText(user.email);
-        profilePhoneNo.setText(user.phoneNo);
+        setProfile();
 
         // button click
         editProfileBtn.setOnClickListener(new View.OnClickListener()
@@ -63,6 +61,15 @@ public class Profile extends Fragment
                 FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getEditProfileFragment());
             }
         });
+    }
+
+    private void setProfile()
+    {
+        String uname = SessionManager.getUsername();
+        User user = UserDb.getUserInfoByUsername(uname);
+        profileUname.setText(uname);
+        profileEmail.setText(user.email);
+        profilePhoneNo.setText(user.phoneNo);
     }
 
     @Override
