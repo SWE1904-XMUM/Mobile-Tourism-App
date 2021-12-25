@@ -17,6 +17,9 @@ public class StartUp extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startup);
 
+        // hide action bar
+        getSupportActionBar().hide();
+
         //create database connection on startup
         ConnectionProvider.getConnection(this.getApplicationContext());
 
