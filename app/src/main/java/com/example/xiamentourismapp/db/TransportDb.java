@@ -3,10 +3,7 @@ package com.example.xiamentourismapp.db;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
-import com.example.xiamentourismapp.entity.Food;
 import com.example.xiamentourismapp.entity.Transport;
-
 import java.util.ArrayList;
 import java.util.List;
 
