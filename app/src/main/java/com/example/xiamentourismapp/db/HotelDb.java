@@ -3,10 +3,7 @@ package com.example.xiamentourismapp.db;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
-import com.example.xiamentourismapp.entity.Bookmark;
 import com.example.xiamentourismapp.entity.Hotel;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +34,7 @@ public class HotelDb
     {
         List<Hotel> hotelList = new ArrayList<>();
 
-        Cursor c = db.rawQuery("select * from bookmarks", null);
+        Cursor c = db.rawQuery("select * from hotels", null);
 
         if (c.moveToFirst())
         {
