@@ -50,14 +50,14 @@ public class ConnectionProvider extends SQLiteOpenHelper
         //create shared preferences table
         db.execSQL("create table sharedPreferences(username text primary key, spFile text not null)");
 
-        //create hotels database
+        /*//create hotels database
         db.execSQL("create table hotels(hotelId integer primary key autoincrement,hotelImage integer not null, hotelName text not null,hotelRating float not null,hotelLink text not null,hotelNo text not null)");
 
         //create food database
         db.execSQL("create table food(foodId integer primary key autoincrement,foodImage integer not null, restaurant text not null,foodRating float not null,foodLink text not null,foodNo text not null)");
 
         //create transports database
-        db.execSQL("create table transports(transportId integer primary key autoincrement,transportImage integer not null, transportName text not null,transportLink text not null,transportNo text not null)");
+        db.execSQL("create table transports(transportId integer primary key autoincrement,transportImage integer not null, transportName text not null,transportLink text not null,transportNo text not null)");*/
     }
 
     @Override
@@ -67,9 +67,9 @@ public class ConnectionProvider extends SQLiteOpenHelper
         databases_name.add("users");
         databases_name.add("bookmarks");
         databases_name.add("sharedPreferences");
-        databases_name.add("hotels");
+        /*databases_name.add("hotels");
         databases_name.add("food");
-        databases_name.add("transports");
+        databases_name.add("transports");*/
 
         for (int index = 0; index < databases_name.size(); index++)
         {
