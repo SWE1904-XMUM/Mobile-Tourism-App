@@ -15,7 +15,10 @@
             android:layout_height="wrap_content"
             android:minHeight="50dp"
             android:minWidth="50dp"
-            android:src="@drawable/hotel_icon"/>
+            android:src="@drawable/hotel_icon"
+            android:tint="@color/black"
+            android:tintMode="@color/black"
+            tools:ignore="UseAppTint" />
 
         <ImageView
             android:id="@+id/foodBtn"
