@@ -18,6 +18,7 @@ import android.widget.Spinner;
 
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.adapter.HotelAdapter;
+import com.example.xiamentourismapp.db.HotelDb;
 import com.example.xiamentourismapp.utils.comparator.SortComparator;
 
 import java.util.ArrayList;
@@ -99,15 +100,15 @@ public class Hotel extends Fragment
     private void storeDataIntoHotelList()
     {
         hotelList = new ArrayList<>();
-        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(R.drawable.lohkah_hotel,"Lohkah Hotel", 5.0F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d15197999-Reviews-Lohkah_Hotel_Spa-Xiamen_Fujian.html","01234"));
-        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(R.drawable.hampton,"Hampton by Hilton City Plaza",3.0F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d17387158-Reviews-Hampton_by_Hilton_City_Plaza-Xiamen_Fujian.html","32142"));
-        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(R.drawable.jingmin,"Jingmin Central Hotel",4.5F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d504806-Reviews-Jingmin_Central_Hotel-Xiamen_Fujian.html","267534"));
-        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(R.drawable.xige,"Xige Hotel",4.0F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d1138523-Reviews-Xige_Hotel-Xiamen_Fujian.html","636565"));
-        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(R.drawable.mercure,"Grand Mercure Xiamen Downtown",4.0F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d2327746-Reviews-Grand_Mercure_Xiamen_Downtown-Xiamen_Fujian.html","97875"));
-        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(R.drawable.hilton,"Hilton Xiamen",4.5F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d1139860-Reviews-Hilton_Xiamen-Xiamen_Fujian.html","997986"));
-        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(R.drawable.seaview,"Seaview Resort",5.0F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d674904-Reviews-Seaview_Resort-Xiamen_Fujian.html","325564"));
-        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(R.drawable.tiantian,"Tiantian Vacation International Hotel",3.5F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d4198437-Reviews-Tiantian_Vacation_International_Hotel-Xiamen_Fujian.html","456567"));
-        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(R.drawable.marriott,"Xiamen Marriott Hotel & Conference Centre",5.0F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d13480411-Reviews-Xiamen_Marriott_Hotel_Conference_Centre-Xiamen_Fujian.html","466756"));
-        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(R.drawable.marco_polo,"Marco Polo Xiamen",4.5F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d300847-Reviews-Marco_Polo_Xiamen-Xiamen_Fujian.html","3245346"));
+        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(null,R.drawable.lohkah_hotel,"Lohkah Hotel", 5.0F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d15197999-Reviews-Lohkah_Hotel_Spa-Xiamen_Fujian.html","01234"));
+        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(null,R.drawable.hampton,"Hampton by Hilton City Plaza",3.0F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d17387158-Reviews-Hampton_by_Hilton_City_Plaza-Xiamen_Fujian.html","32142"));
+        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(null,R.drawable.jingmin,"Jingmin Central Hotel",4.5F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d504806-Reviews-Jingmin_Central_Hotel-Xiamen_Fujian.html","267534"));
+        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(null,R.drawable.xige,"Xige Hotel",4.0F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d1138523-Reviews-Xige_Hotel-Xiamen_Fujian.html","636565"));
+        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(null,R.drawable.mercure,"Grand Mercure Xiamen Downtown",4.0F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d2327746-Reviews-Grand_Mercure_Xiamen_Downtown-Xiamen_Fujian.html","97875"));
+        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(null,R.drawable.hilton,"Hilton Xiamen",4.5F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d1139860-Reviews-Hilton_Xiamen-Xiamen_Fujian.html","997986"));
+        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(null,R.drawable.seaview,"Seaview Resort",5.0F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d674904-Reviews-Seaview_Resort-Xiamen_Fujian.html","325564"));
+        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(null,R.drawable.tiantian,"Tiantian Vacation International Hotel",3.5F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d4198437-Reviews-Tiantian_Vacation_International_Hotel-Xiamen_Fujian.html","456567"));
+        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(null,R.drawable.marriott,"Xiamen Marriott Hotel & Conference Centre",5.0F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d13480411-Reviews-Xiamen_Marriott_Hotel_Conference_Centre-Xiamen_Fujian.html","466756"));
+        hotelList.add(new com.example.xiamentourismapp.entity.Hotel(null,R.drawable.marco_polo,"Marco Polo Xiamen",4.5F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d300847-Reviews-Marco_Polo_Xiamen-Xiamen_Fujian.html","3245346"));
     }
 }
