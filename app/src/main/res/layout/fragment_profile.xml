@@ -6,107 +6,119 @@
     tools:context=".fragment.Profile"
     android:orientation="vertical">
 
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp">
-
-        <ImageView
-            android:id="@+id/appLogo"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_gravity="center"
-            android:src="@drawable/xtravel" />
-
+        android:layout_height="match_parent"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical">
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/profileUname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Your username"
-                android:textColor="@color/dark_blue"
-                android:layout_weight="1"
-                android:textSize="22dp" />
-
-            <TextView
-                android:id="@+id/profileEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Your email"
-                android:textColor="@color/dark_blue"
-                android:layout_weight="1"
-                android:textSize="22dp" />
-
-            <TextView
-                android:id="@+id/profilePhoneNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Your phone no"
-                android:textColor="@color/dark_blue"
-                android:layout_weight="1"
-                android:textSize="22dp" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="80dp"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/editProfileBtn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Edit Profile"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textColorHighlight="@color/white"
-            android:layout_marginVertical="5dp"
-            android:textSize="13dp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp">
 
-    <LinearLayout
-        android:layout_marginTop="40dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
-        android:orientation="vertical">
-        <TextView
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/dark_blue"
-            android:text="Contact Us"
-            android:textStyle="bold"
-            android:textSize="30dp"/>
-        <ImageView
-            android:id="@+id/contactUs"
-            android:layout_width="350dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:src="@drawable/contact_us"/>
-    </LinearLayout>
+                <ImageView
+                    android:id="@+id/appLogo"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/xtravel" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Develop by: Ng Pee Jou"
-            android:textColor="@color/black"
-            android:textSize="17dp"/>
-    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/profileUname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your username"
+                        android:textColor="@color/dark_blue"
+                        android:layout_weight="1"
+                        android:textSize="22dp" />
+
+                    <TextView
+                        android:id="@+id/profileEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your email"
+                        android:textColor="@color/dark_blue"
+                        android:layout_weight="1"
+                        android:textSize="22dp" />
+
+                    <TextView
+                        android:id="@+id/profilePhoneNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your phone no"
+                        android:textColor="@color/dark_blue"
+                        android:layout_weight="1"
+                        android:textSize="22dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="80dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/editProfileBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Edit Profile"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textColorHighlight="@color/white"
+                    android:layout_marginVertical="5dp"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/dark_blue"
+                    android:text="Contact Us"
+                    android:textStyle="bold"
+                    android:textSize="30dp"/>
+                <ImageView
+                    android:id="@+id/contactUs"
+                    android:layout_width="350dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/contact_us"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Develop by: Ng Pee Jou"
+                    android:textColor="@color/black"
+                    android:textSize="17dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
