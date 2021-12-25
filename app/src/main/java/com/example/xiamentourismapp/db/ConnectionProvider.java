@@ -46,6 +46,9 @@ public class ConnectionProvider extends SQLiteOpenHelper
 
         // create bookmarks table
         db.execSQL("create table bookmarks (bookmarkId integer primary key autoincrement, username text not null, bookmarkName text not null, bookmarkLink text not null, bookmarkPhone text not null,bookmarkImage integer not null)");
+
+        //create shared preferences database
+        db.execSQL("create table sharedPreferences(username text primary key, spFile text not null)");
     }
 
     @Override
@@ -54,6 +57,7 @@ public class ConnectionProvider extends SQLiteOpenHelper
         List<String> databases_name = new ArrayList<>();
         databases_name.add("users");
         databases_name.add("bookmarks");
+        databases_name.add("sharedPreferences");
 
         for (int index = 0; index < databases_name.size(); index++)
         {

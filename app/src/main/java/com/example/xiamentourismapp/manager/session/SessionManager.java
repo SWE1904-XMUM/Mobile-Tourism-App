@@ -35,4 +35,15 @@ public class SessionManager
     {
         return sp.getString(USERNAME,"");
     }
+
+    public static void setLogin(boolean login)
+    {
+        edt.putBoolean(LOGIN,login);
+        edt.commit();
+    }
+
+    public static boolean getLogin()
+    {
+        return sp.getBoolean(LOGIN,true);
+    }
 }

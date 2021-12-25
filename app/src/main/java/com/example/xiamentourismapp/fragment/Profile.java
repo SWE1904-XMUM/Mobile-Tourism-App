@@ -87,6 +87,7 @@ public class Profile extends Fragment
         if (id == R.id.logoutBtn)
         {
             SessionManager.setUsername("");
+            SessionManager.setLogin(false);
             Intent loginPage = new Intent(getActivity(), Login.class);
             startActivity(loginPage);
             return true;

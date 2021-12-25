@@ -11,8 +11,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.xiamentourismapp.R;
+import com.example.xiamentourismapp.db.ConnectionProvider;
 import com.example.xiamentourismapp.db.UserDb;
 import com.example.xiamentourismapp.manager.session.SessionManager;
+import com.example.xiamentourismapp.manager.session.SharedPreferencesManager;
 import com.example.xiamentourismapp.utils.ValidateUserProfile;
 import com.example.xiamentourismapp.utils.ui.SnackbarCreator;
 
@@ -30,30 +32,31 @@ public class Login extends AppCompatActivity
 
         setViewComponent();
 
+        String loginUsername = "";
+
+        try
+        {
+            loginUsername = SharedPreferencesManager.getLoggedInUsername(Login.this);
+        }
+
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        if (!loginUsername.equals(""))
+        {
+            SharedPreferencesManager.updateUser(loginUsername);
+            loginUser(loginUsername);
+            finish();
+        }
+
         loginBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
                 updateTextView();
-
-                String loginUname = "";
-
-                try
-                {
-                    loginUname = SessionManager.getUsername();
-                }
-
-                catch (Exception e)
-                {
-                    e.printStackTrace();
-                }
-
-                if (!loginUname.equals(""))
-                {
-                    loginUser();
-                    finish();
-                }
 
                 if (!validateUser(view))
                 {
@@ -85,7 +88,8 @@ public class Login extends AppCompatActivity
 
                         if (verify)
                         {
-                            loginUser();
+                            SharedPreferencesManager.updateUser(loginUnameTxt);
+                            loginUser(loginUnameTxt);
                         }
 
                         else
@@ -108,10 +112,11 @@ public class Login extends AppCompatActivity
         });
     }
 
-    private void loginUser()
+    private void loginUser(String uname)
     {
-        SessionManager.setSession(loginUnameTxt,getApplicationContext());
-        SessionManager.setUsername(loginUnameTxt);
+        SessionManager.setSession(uname,getApplicationContext());
+        SessionManager.setUsername(uname);
+        SessionManager.setLogin(true);
         Intent home = new Intent(Login.this, FragmentContainer.class);
         startActivity(home);
     }

@@ -5,6 +5,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import com.example.xiamentourismapp.entity.User;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserDb
 {
     private static SQLiteDatabase db = ConnectionProvider.getDatabase(null);
@@ -69,5 +73,17 @@ public class UserDb
     {
         Cursor c = db.rawQuery("select email from users where email = ?", new String[]{email});
         return (c.getCount() > 0);
+    }
+
+    public static List<String> getAllUsername()
+    {
+        Cursor c = db.rawQuery("select username from users", null);
+        List<String> usernameList = new ArrayList<>();
+
+        while(c.moveToNext())
+        {
+            usernameList.add(c.getString(0));
+        }
+        return usernameList;
     }
 }
