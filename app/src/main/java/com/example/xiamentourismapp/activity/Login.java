@@ -37,6 +37,24 @@ public class Login extends AppCompatActivity
             {
                 updateTextView();
 
+                String loginUname = "";
+
+                try
+                {
+                    loginUname = SessionManager.getUsername();
+                }
+
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+
+                if (!loginUname.equals(""))
+                {
+                    loginUser();
+                    finish();
+                }
+
                 if (!validateUser(view))
                 {
                     return;
@@ -70,8 +88,7 @@ public class Login extends AppCompatActivity
                             SessionManager.setSession(loginUnameTxt,getApplicationContext());
                             SessionManager.setLogin(true);
                             SessionManager.setUsername(loginUnameTxt);
-                            Intent home = new Intent(Login.this, FragmentContainer.class);
-                            startActivity(home);
+                            loginUser();
                         }
 
                         else
@@ -92,6 +109,12 @@ public class Login extends AppCompatActivity
                 startActivity(signup);
             }
         });
+    }
+
+    private void loginUser()
+    {
+        Intent home = new Intent(Login.this, FragmentContainer.class);
+        startActivity(home);
     }
 
     private void setViewComponent()
