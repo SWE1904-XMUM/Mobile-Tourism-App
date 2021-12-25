@@ -20,11 +20,12 @@
                 android:layout_margin="15dp">
 
                 <TextView
+                    android:layout_gravity="center"
                     android:id="@+id/bookmark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
+                    android:textColor="@color/dark_blue"
                     android:text="Click on bookmark to view in browser"
                     android:textSize="20dp"
                     android:textStyle="bold" />
