@@ -3,11 +3,13 @@
     <color name="dark_blue">#1967BA</color>
     <color name="light_blue">#85C5F6</color>
     <color name="status_bar">#6CB6EF</color>
+    <color name="spinner">#C7E4FC</color>
     <color name="startup">#BAD6EC</color>
     <color name="red">#911107</color>
     <color name="grey">#E8EBEC</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="green">#277A14</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="error_background">#FFCACA</color>
