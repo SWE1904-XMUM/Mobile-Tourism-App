@@ -80,7 +80,7 @@ public class EditProfile extends Fragment
 
                 else
                 {
-                    boolean updateProfile = UserDb.updateUserProfile(uname,editEmailTxt,editPhoneNoTxt,editPwdTxt);
+                    boolean updateProfile = UserDb.updateUserProfile(uname,editPhoneNoTxt,editPwdTxt);
 
                     if (updateProfile)
                     {
@@ -110,6 +110,7 @@ public class EditProfile extends Fragment
         editUname.setText(uname);
         editUname.setEnabled(false);
         editEmail.setText(user.email);
+        editEmail.setEnabled(false);
         editPhoneNo.setText(user.phoneNo);
         editPwd.setText(user.password);
     }

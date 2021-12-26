@@ -30,10 +30,9 @@ public class UserDb
         return insert > 0;
     }
 
-    public static boolean updateUserProfile(String username, String email, String phoneNo, String newPassword)
+    public static boolean updateUserProfile(String username, String phoneNo, String newPassword)
     {
         ContentValues cv = new ContentValues();
-        cv.put(EMAIL, email);
         cv.put(PHONE_NO, phoneNo);
         cv.put(PASSWORD, newPassword);
 
