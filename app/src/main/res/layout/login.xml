@@ -13,11 +13,18 @@
         android:layout_marginHorizontal="50dp"
         android:orientation="vertical">
 
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/xtravel_round"/>
+
         <TextView
             android:id="@+id/loginUnameTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="3dp"
             android:text="Username"
             android:textStyle="bold"
@@ -76,7 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="100dp"
             android:layout_marginBottom="10dp"
             android:text="Login"
