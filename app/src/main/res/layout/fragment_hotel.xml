@@ -17,7 +17,7 @@
 
             <FrameLayout
                 android:id="@+id/sortHotelFrame"
-                android:layout_width="155dp"
+                android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:layout_margin="15dp">
@@ -26,7 +26,8 @@
                     android:id="@+id/sortRating"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:minHeight="30dp" />
+                    android:minHeight="30dp"
+                    android:background="@drawable/spinner_frame"/>
             </FrameLayout>
 
             <FrameLayout
