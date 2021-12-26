@@ -94,6 +94,7 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
                 {
                     bookmarkList.remove(position);
                     notifyDataSetChanged();
+                    notifyItemRemoved(position);
                     ToastCreator.createToast(activity,"Bookmark deleted.");
                 }
 

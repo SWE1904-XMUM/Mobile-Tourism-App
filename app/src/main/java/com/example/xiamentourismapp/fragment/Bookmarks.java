@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.adapter.BookmarkAdapter;
 import com.example.xiamentourismapp.db.BookmarkDb;
@@ -22,6 +25,8 @@ public class Bookmarks extends Fragment
 {
     private RecyclerView bookmarkRecyclerView;
     private List<Bookmark> bookmarkList;
+    private BookmarkAdapter bookmarkAdapter;
+    private FrameLayout noBookmarkFrame;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -37,9 +42,20 @@ public class Bookmarks extends Fragment
 
         // set view component
         bookmarkRecyclerView = view.findViewById(R.id.bookmarkRecyclerView);
+        noBookmarkFrame = view.findViewById(R.id.noBookmarkFrame);
 
         storeDataIntoList();
         updateRecyclerView();
+
+        if (bookmarkAdapter.getItemCount() == 0)
+        {
+            noBookmarkFrame.setVisibility(View.VISIBLE);
+        }
+
+        else
+        {
+            noBookmarkFrame.setVisibility(View.GONE);
+        }
     }
 
     private void storeDataIntoList()
@@ -50,7 +66,7 @@ public class Bookmarks extends Fragment
 
     public void updateRecyclerView()
     {
-        BookmarkAdapter bookmarkAdapter = new BookmarkAdapter(getActivity(), bookmarkList, (AppCompatActivity) getActivity());
+        bookmarkAdapter = new BookmarkAdapter(getActivity(), bookmarkList, (AppCompatActivity) getActivity());
         bookmarkRecyclerView.setAdapter(bookmarkAdapter);
         bookmarkRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }

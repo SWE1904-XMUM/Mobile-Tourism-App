@@ -16,7 +16,7 @@
             android:orientation="vertical">
 
             <FrameLayout
-                android:id="@+id/sortTransportFrame"
+                android:id="@+id/bookmarkFrame"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp">
@@ -34,9 +34,10 @@
             </FrameLayout>
 
             <FrameLayout
+                android:id="@+id/recyclerViewFrame"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/sortTransportFrame"
+                android:layout_below="@+id/bookmarkFrame"
                 android:layout_marginBottom="?attr/actionBarSize">
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -45,6 +46,35 @@
                     android:layout_height="match_parent"
                     android:layout_below="@+id/bookmark"
                     android:layout_marginTop="5dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/noBookmarkFrame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recyclerViewFrame">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="50dp">
+                    <TextView
+                        android:textColor="@color/red"
+                        android:textStyle="bold"
+                        android:textSize="30dp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No bookmark added"/>
+
+                    <ImageView
+                        android:layout_marginTop="20dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/no_bookmark" />
+                </LinearLayout>
             </FrameLayout>
         </LinearLayout>
     </RelativeLayout>
