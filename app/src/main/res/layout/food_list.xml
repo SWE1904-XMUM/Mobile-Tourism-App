@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -12,42 +13,41 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingHorizontal="20dp"
             android:paddingVertical="15dp">
 
             <ImageView
                 android:id="@+id/foodImageList"
-                android:layout_width="85dp"
-                android:layout_height="match_parent" />
+                android:layout_width="75dp"
+                android:layout_height="wrap_content" />
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:orientation="vertical"
                 android:padding="15dp">
 
                 <TextView
                     android:id="@+id/foodRestaurantList"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Food 1"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark_blue"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/foodRatingList"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Rating"
-                    android:textColor="@color/black"
+                    android:textColor="@color/gold"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -57,14 +57,18 @@
                 android:layout_height="30dp"
                 android:src="@drawable/call_icon"
                 android:layout_marginVertical="30dp"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="10dp"
+                android:tint="@color/red"
+                tools:ignore="UseAppTint" />
 
             <ImageView
                 android:id="@+id/foodAddBtnList"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/add_bookmark_icon"
-                android:layout_marginVertical="30dp"/>
+                android:layout_marginVertical="30dp"
+                android:tint="@color/green"
+                tools:ignore="UseAppTint" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
