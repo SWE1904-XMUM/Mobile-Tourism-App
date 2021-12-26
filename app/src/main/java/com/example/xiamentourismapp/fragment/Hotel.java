@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -18,7 +21,9 @@ import android.widget.Spinner;
 
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.adapter.HotelAdapter;
+import com.example.xiamentourismapp.constant.GetFragment;
 import com.example.xiamentourismapp.db.HotelDb;
+import com.example.xiamentourismapp.manager.FragmentManager;
 import com.example.xiamentourismapp.utils.comparator.SortComparator;
 
 import java.util.ArrayList;
@@ -36,6 +41,7 @@ public class Hotel extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         getActivity().setTitle("Hotel");
+        setHasOptionsMenu(true);
         return inflater.inflate(R.layout.fragment_hotel, container, false);
     }
 
@@ -110,5 +116,26 @@ public class Hotel extends Fragment
         hotelList.add(new com.example.xiamentourismapp.entity.Hotel(null,R.drawable.tiantian,"Tiantian Vacation International Hotel",3.5F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d4198437-Reviews-Tiantian_Vacation_International_Hotel-Xiamen_Fujian.html","456567"));
         hotelList.add(new com.example.xiamentourismapp.entity.Hotel(null,R.drawable.marriott,"Xiamen Marriott Hotel & Conference Centre",5.0F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d13480411-Reviews-Xiamen_Marriott_Hotel_Conference_Centre-Xiamen_Fujian.html","466756"));
         hotelList.add(new com.example.xiamentourismapp.entity.Hotel(null,R.drawable.marco_polo,"Marco Polo Xiamen",4.5F,"https://www.tripadvisor.com.my/Hotel_Review-g297407-d300847-Reviews-Marco_Polo_Xiamen-Xiamen_Fujian.html","3245346"));
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater)
+    {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.back_menu,menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        int id = item.getItemId();
+
+        if (id == R.id.backBtn)
+        {
+            FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getExploreFragment());
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

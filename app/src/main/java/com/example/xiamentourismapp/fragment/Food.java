@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -15,6 +18,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.adapter.FoodAdapter;
+import com.example.xiamentourismapp.constant.GetFragment;
+import com.example.xiamentourismapp.manager.FragmentManager;
 import com.example.xiamentourismapp.utils.comparator.SortComparator;
 
 import java.util.ArrayList;
@@ -32,6 +37,7 @@ public class Food extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         getActivity().setTitle("Food");
+        setHasOptionsMenu(true);
         return inflater.inflate(R.layout.fragment_food, container, false);
     }
 
@@ -106,5 +112,26 @@ public class Food extends Fragment
         foodList.add(new com.example.xiamentourismapp.entity.Food(null,R.drawable.shang_qing,"Shang Qing Ben Gang Seafood", 4.7F,"https://www.trip.com/travel-guide/xiamen-21-restaurant/shang-qing-ben-gang-seafood-11315853/","0592-2082008"));
         foodList.add(new com.example.xiamentourismapp.entity.Food(null,R.drawable.yuefu,"Yue Fu Restaurant", 4.4F,"https://www.trip.com/travel-guide/xiamen-21-restaurant/yue-fu-11312059/", "0592-2351673"));
         foodList.add(new com.example.xiamentourismapp.entity.Food(null,R.drawable.tianyuan,"Tian Yuan Hotel Restaurant",4.8F, "https://www.trip.com/travel-guide/xiamen-21-restaurant/tianyuanjiudianzizhu-restaurant-57275361/", "0592-5663999"));
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater)
+    {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.back_menu,menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        int id = item.getItemId();
+
+        if (id == R.id.backBtn)
+        {
+            FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getExploreFragment());
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
