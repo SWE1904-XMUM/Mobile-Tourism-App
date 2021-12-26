@@ -17,9 +17,12 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.xiamentourismapp.R;
+import com.example.xiamentourismapp.constant.GetFragment;
 import com.example.xiamentourismapp.constant.RequestCode;
 import com.example.xiamentourismapp.db.BookmarkDb;
 import com.example.xiamentourismapp.entity.Bookmark;
+import com.example.xiamentourismapp.fragment.Bookmarks;
+import com.example.xiamentourismapp.manager.FragmentManager;
 import com.example.xiamentourismapp.utils.ui.ToastCreator;
 
 import java.util.List;
@@ -95,6 +98,12 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
                     bookmarkList.remove(position);
                     notifyDataSetChanged();
                     notifyItemRemoved(position);
+
+                    if (getItemCount() == 0)
+                    {
+                        /*Bookmarks bookmarks = new Bookmarks();
+                        bookmarks.updateView();*/
+                    }
                     ToastCreator.createToast(activity,"Bookmark deleted.");
                 }
 

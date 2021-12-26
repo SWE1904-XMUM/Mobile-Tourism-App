@@ -46,7 +46,24 @@ public class Bookmarks extends Fragment
 
         storeDataIntoList();
         updateRecyclerView();
+        updateView();
+    }
 
+    private void storeDataIntoList()
+    {
+        String uname = SessionManager.getUsername();
+        bookmarkList = BookmarkDb.getUserBookmarkByUsername(uname);
+    }
+
+    private void updateRecyclerView()
+    {
+        bookmarkAdapter = new BookmarkAdapter(getActivity(), bookmarkList, (AppCompatActivity) getActivity());
+        bookmarkRecyclerView.setAdapter(bookmarkAdapter);
+        bookmarkRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+    }
+
+    public void updateView()
+    {
         if (bookmarkAdapter.getItemCount() == 0)
         {
             noBookmarkFrame.setVisibility(View.VISIBLE);
@@ -56,18 +73,5 @@ public class Bookmarks extends Fragment
         {
             noBookmarkFrame.setVisibility(View.GONE);
         }
-    }
-
-    private void storeDataIntoList()
-    {
-        String uname = SessionManager.getUsername();
-        bookmarkList = BookmarkDb.getUserBookmarkByUsername(uname);
-    }
-
-    public void updateRecyclerView()
-    {
-        bookmarkAdapter = new BookmarkAdapter(getActivity(), bookmarkList, (AppCompatActivity) getActivity());
-        bookmarkRecyclerView.setAdapter(bookmarkAdapter);
-        bookmarkRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 }
