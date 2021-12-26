@@ -14,7 +14,7 @@
         <VideoView
             android:id="@+id/aboutXiamenVideo"
             android:layout_width="match_parent"
-            android:layout_height="270dp" />
+            android:layout_height="230dp" />
     </FrameLayout>
 
     <TextView
@@ -34,5 +34,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/top10TouristAttractions"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="10dp" />
 </LinearLayout>

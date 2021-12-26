@@ -18,17 +18,17 @@
                 android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="10dp"
                 android:padding="3dp"
                 android:src="@drawable/gulangyu_island"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_gravity="center"
                 android:padding="3dp"
                 android:orientation="vertical" >
@@ -42,8 +42,8 @@
                     android:layout_marginEnd="1dp"
                     android:layout_marginBottom="3dp"
                     android:text="Tourism Name"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
