@@ -36,8 +36,11 @@ public class AddNotes extends Fragment
     private TextView bookmarkName;
     private EditText notes;
     private Button addNotesBtn;
+
     String bookmarkId, noteTxt;
     String uname = SessionManager.getUsername();
+    Integer noteId;
+    boolean checkNote = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -64,6 +67,21 @@ public class AddNotes extends Fragment
 
         storeDataIntoList();
         displayDataFromDb();
+
+        noteId = NotesDb.checkExistingNote(uname,Integer.parseInt(bookmarkId));
+
+        if (noteId == -1)
+        {
+            notes.setText("");
+            checkNote = false;
+        }
+
+        else
+        {
+            String note = NotesDb.getNotesByNoteId(noteId);
+            notes.setText(note);
+            checkNote = true;
+        }
 
         addNotesBtn.setOnClickListener(new View.OnClickListener()
         {
@@ -122,7 +140,19 @@ public class AddNotes extends Fragment
 
             if (deleteBookmark)
             {
-                ToastCreator.createToast(getActivity(),"Bookmark deleted.");
+                if (checkNote == true)
+                {
+                    if (NotesDb.deleteNotes(noteId))
+                    {
+                        ToastCreator.createToast(getActivity(),"Bookmark & notes deleted.");
+                    }
+                }
+
+                else
+                {
+                    ToastCreator.createToast(getActivity(),"Bookmark deleted.");
+                }
+
                 FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getBookmarksFragment());
             }
 
@@ -131,6 +161,12 @@ public class AddNotes extends Fragment
                 ToastCreator.createToast(getActivity(),"Fail to delete bookmark.");
             }
 
+            return true;
+        }
+
+        else if (id == R.id.backBtn)
+        {
+            FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getBookmarksFragment());
             return true;
         }
 

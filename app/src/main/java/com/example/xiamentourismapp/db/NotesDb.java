@@ -38,10 +38,20 @@ public class NotesDb
         return result > 0;
     }
 
-    public static boolean checkExistingNote(String username,Integer bookmarkId)
+    public static Integer checkExistingNote(String username,Integer bookmarkId)
     {
         Cursor c = db.rawQuery("select noteId from notes where username = ? and bookmarkId = ?", new String[]{username,bookmarkId.toString()});
-        return (c.getCount() > 0);
+
+        if (c.moveToFirst())
+        {
+            do
+            {
+                return c.getInt(0);
+            }
+            while (c.moveToNext());
+        }
+
+        return -1;
     }
 
     public static String getNotesByNoteId(Integer noteId)
