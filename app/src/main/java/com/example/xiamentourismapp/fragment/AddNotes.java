@@ -90,17 +90,36 @@ public class AddNotes extends Fragment
             {
                 getEditText();
 
-                boolean insertNote = NotesDb.insertNote(Integer.parseInt(bookmarkId),uname,noteTxt);
-
-                if (insertNote)
+                if (checkNote == false)
                 {
-                    ToastCreator.createToast(getActivity(),"Note inserted!");
-                    FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getBookmarksFragment());
+                    boolean insertNote = NotesDb.insertNote(Integer.parseInt(bookmarkId),uname,noteTxt);
+
+                    if (insertNote)
+                    {
+                        ToastCreator.createToast(getActivity(),"Note inserted!");
+                        FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getBookmarksFragment());
+                    }
+
+                    else
+                    {
+                        ToastCreator.createToast(getActivity(),"Fail to insert note.");
+                    }
                 }
 
                 else
                 {
-                    ToastCreator.createToast(getActivity(),"Fail to insert note.");
+                    boolean updateNote = NotesDb.updateNotes(noteId,noteTxt);
+
+                    if (updateNote)
+                    {
+                        ToastCreator.createToast(getActivity(),"Note updated!");
+                        FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getBookmarksFragment());
+                    }
+
+                    else
+                    {
+                        ToastCreator.createToast(getActivity(),"Fail to update note.");
+                    }
                 }
             }
         });
