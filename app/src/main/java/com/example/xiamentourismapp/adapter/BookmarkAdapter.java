@@ -23,6 +23,7 @@ import com.example.xiamentourismapp.constant.GetFragment;
 import com.example.xiamentourismapp.constant.RequestCode;
 import com.example.xiamentourismapp.db.BookmarkDb;
 import com.example.xiamentourismapp.entity.Bookmark;
+import com.example.xiamentourismapp.fragment.AddNotes;
 import com.example.xiamentourismapp.fragment.Bookmarks;
 import com.example.xiamentourismapp.manager.FragmentManager;
 import com.example.xiamentourismapp.utils.ui.ToastCreator;
@@ -95,7 +96,7 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
             {
                 Bundle id = new Bundle();
                 id.putString("id",bookmarkList.get(position).bookmarkId.toString());
-                Fragment addNotes = GetFragment.getAddNotesFragment();
+                Fragment addNotes = new AddNotes();
                 addNotes.setArguments(id);
                 FragmentManager.beginNewFragment(activity,addNotes);
             }

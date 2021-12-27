@@ -71,18 +71,7 @@ public class AddNotes extends Fragment
 
         noteId = NotesDb.checkExistingNote(uname,Integer.parseInt(bookmarkId));
 
-        if (noteId == -1)
-        {
-            notes.setText("");
-            checkNote = false;
-        }
-
-        else
-        {
-            String note = NotesDb.getNotesByNoteId(noteId);
-            notes.setText(note);
-            checkNote = true;
-        }
+        checkNoteAndDisplay();
 
         addNotesBtn.setOnClickListener(new View.OnClickListener()
         {
@@ -140,6 +129,23 @@ public class AddNotes extends Fragment
     private void getEditText()
     {
         noteTxt = notes.getText().toString();
+    }
+
+    private void checkNoteAndDisplay()
+    {
+        if (noteId == -1)
+        {
+            notes.setText("");
+            checkNote = false;
+        }
+
+        else
+        {
+            String note = NotesDb.getNotesByNoteId(noteId);
+            System.out.println("Edit text: " + note);
+            notes.setText(note);
+            checkNote = true;
+        }
     }
 
     private void displayDataFromDb()
