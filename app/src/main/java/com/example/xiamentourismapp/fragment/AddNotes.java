@@ -136,6 +136,7 @@ public class AddNotes extends Fragment
         if (noteId == -1)
         {
             notes.setText("");
+            addNotesBtn.setText("Add notes");
             checkNote = false;
         }
 
@@ -143,6 +144,7 @@ public class AddNotes extends Fragment
         {
             String note = NotesDb.getNotesByNoteId(noteId);
             notes.setText(note);
+            addNotesBtn.setText("Update notes");
             checkNote = true;
         }
     }
