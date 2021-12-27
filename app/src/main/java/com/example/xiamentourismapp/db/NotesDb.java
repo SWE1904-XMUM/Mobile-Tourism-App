@@ -4,11 +4,6 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.xiamentourismapp.entity.Bookmark;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class NotesDb
 {
     private static SQLiteDatabase db = ConnectionProvider.getDatabase(null);
