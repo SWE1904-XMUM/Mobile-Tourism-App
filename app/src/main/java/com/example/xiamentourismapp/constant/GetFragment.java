@@ -2,6 +2,7 @@ package com.example.xiamentourismapp.constant;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.xiamentourismapp.fragment.AddNotes;
 import com.example.xiamentourismapp.fragment.Bookmarks;
 import com.example.xiamentourismapp.fragment.EditProfile;
 import com.example.xiamentourismapp.fragment.Explore;
@@ -21,6 +22,7 @@ public class GetFragment
     public static Fragment hotel = new Hotel();
     public static Fragment food = new Food();
     public static Fragment transport = new Transport();
+    public static Fragment addNotes = new AddNotes();
 
     public GetFragment()
     {
@@ -65,5 +67,10 @@ public class GetFragment
     public static Fragment getTransportFragment()
     {
         return transport;
+    }
+
+    public static Fragment getAddNotesFragment()
+    {
+        return addNotes;
     }
 }

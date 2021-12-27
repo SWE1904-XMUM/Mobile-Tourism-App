@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -92,20 +93,11 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
             @Override
             public void onClick(View view)
             {
-                boolean deleteBookmark = BookmarkDb.deleteBookmark(bookmarkList.get(position).bookmarkName);
-
-                if (deleteBookmark)
-                {
-                    bookmarkList.remove(position);
-                    notifyDataSetChanged();
-                    notifyItemRemoved(position);
-                    ToastCreator.createToast(activity,"Bookmark deleted.");
-                }
-
-                else
-                {
-                    ToastCreator.createToast(activity,"Fail to delete bookmark.");
-                }
+                Bundle id = new Bundle();
+                id.putString("id",bookmarkList.get(position).bookmarkId.toString());
+                Fragment addNotes = GetFragment.getAddNotesFragment();
+                addNotes.setArguments(id);
+                FragmentManager.beginNewFragment(activity,addNotes);
             }
         });
     }

@@ -35,28 +35,38 @@ public class BookmarkDb
     {
         List<Bookmark> bookmarkList = new ArrayList<>();
 
-        Cursor c = db.rawQuery("select bookmarkName, bookmarkLink, bookmarkPhone, bookmarkImage from bookmarks where username=?", new String[]{uname});
+        Cursor c = db.rawQuery("select bookmarkId, bookmarkName, bookmarkLink, bookmarkPhone, bookmarkImage from bookmarks where username=?", new String[]{uname});
 
         if (c.moveToFirst())
         {
             do
             {
-                bookmarkList.add(new Bookmark(null,uname,c.getString(0),c.getString(1),c.getString(2),c.getInt(3)));
+                bookmarkList.add(new Bookmark(c.getInt(0),uname,c.getString(1),c.getString(2),c.getString(3),c.getInt(4)));
             }
             while(c.moveToNext());
         }
         return bookmarkList;
     }
 
-    public static int getBookmarkIdByBookmarkName(String bookmarkName)
+    public static List<Bookmark> getBookmarkByBookmarkId(String bookmarkId)
     {
-        Cursor c = db.rawQuery("select bookmarkId from bookmarks where bookmarkName=?", new String[]{bookmarkName});
-        return (c.moveToNext()) ? c.getInt(0) : -1;
+        List<Bookmark> bookmarkList = new ArrayList<>();
+
+        Cursor c = db.rawQuery("select bookmarkName, bookmarkLink, bookmarkPhone, bookmarkImage from bookmarks where bookmarkId=?", new String[]{bookmarkId});
+
+        if (c.moveToFirst())
+        {
+            do
+            {
+                bookmarkList.add(new Bookmark(null,null,c.getString(0),c.getString(1),c.getString(2),c.getInt(3)));
+            }
+            while(c.moveToNext());
+        }
+        return bookmarkList;
     }
 
-    public static boolean deleteBookmark(String bookmarkName)
+    public static boolean deleteBookmark(String bookmarkId)
     {
-        Integer bookmarkId = getBookmarkIdByBookmarkName(bookmarkName);
         long result = db.delete(TABLE_NAME, "bookmarkId=?", new String[]{String.valueOf(bookmarkId)});
         return result > 0;
     }

@@ -10,6 +10,7 @@
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/bookmarks_icon.xml" value="0.23981481481481481" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/call_icon.xml" value="0.2462962962962963" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/delete_icon.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/edit_icon.xml" value="0.18055555555555555" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/food_icon.xml" value="0.2490740740740741" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/home_icon.xml" value="0.2611111111111111" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/drawable/hotel_icon.xml" value="0.2490740740740741" />
@@ -26,6 +27,7 @@
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/bookmark_list.xml" value="0.264" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/food_list.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_add.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_add_notes.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_bookmarks.xml" value="0.264" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_container.xml" value="0.2359375" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/fragment_edit_profile.xml" value="0.25" />
@@ -46,6 +48,7 @@
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/layout/transport_list.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/menu/back_menu.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/menu/bottom_navigation_bar.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/menu/delete_menu.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/menu/profile_menu.xml" value="0.4" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/mipmap-anydpi-v26/1. Gulangyu Island.xml" value="0.2388888888888889" />
         <entry key="..\:/Users/user/Desktop/Software Engineering/Y3S2/Mobile Application System Design/Assessment/Final Project/Code/app/src/main/res/mipmap-anydpi-v26/app_logo.xml" value="0.26205128205128203" />
