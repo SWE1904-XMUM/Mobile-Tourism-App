@@ -20,8 +20,10 @@ import android.widget.TextView;
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.constant.GetFragment;
 import com.example.xiamentourismapp.db.BookmarkDb;
+import com.example.xiamentourismapp.db.NotesDb;
 import com.example.xiamentourismapp.entity.Bookmark;
 import com.example.xiamentourismapp.manager.FragmentManager;
+import com.example.xiamentourismapp.manager.session.SessionManager;
 import com.example.xiamentourismapp.utils.ui.ToastCreator;
 
 import java.security.PrivateKey;
@@ -34,7 +36,8 @@ public class AddNotes extends Fragment
     private TextView bookmarkName;
     private EditText notes;
     private Button addNotesBtn;
-    String bookmarkId;
+    String bookmarkId, noteTxt;
+    String uname = SessionManager.getUsername();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -60,14 +63,45 @@ public class AddNotes extends Fragment
         addNotesBtn = view.findViewById(R.id.addNotesBtn);
 
         storeDataIntoList();
+        displayDataFromDb();
 
-        bookmarkImg.setImageResource(bookmarkList.get(0).bookmarkImage);
-        bookmarkName.setText(bookmarkList.get(0).bookmarkName);
+        addNotesBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                getEditText();
+
+                boolean insertNote = NotesDb.insertNote(Integer.parseInt(bookmarkId),uname,noteTxt);
+
+                if (insertNote)
+                {
+                    ToastCreator.createToast(getActivity(),"Note inserted!");
+                    FragmentManager.beginNewFragment((AppCompatActivity) getActivity(), GetFragment.getBookmarksFragment());
+                }
+
+                else
+                {
+                    ToastCreator.createToast(getActivity(),"Fail to insert note.");
+                }
+            }
+        });
     }
 
     private void storeDataIntoList()
     {
         bookmarkList = BookmarkDb.getBookmarkByBookmarkId(bookmarkId);
+    }
+
+    private void getEditText()
+    {
+        noteTxt = notes.getText().toString();
+    }
+
+    private void displayDataFromDb()
+    {
+        bookmarkImg.setImageResource(bookmarkList.get(0).bookmarkImage);
+        bookmarkName.setText(bookmarkList.get(0).bookmarkName);
     }
 
     @Override
