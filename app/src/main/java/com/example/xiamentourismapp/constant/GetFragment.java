@@ -17,12 +17,10 @@ public class GetFragment
     public static Fragment home = new Home();
     public static Fragment explore = new Explore();
     public static Fragment bookmarks = new Bookmarks();
-    public static Fragment profile = new Profile();
     public static Fragment editProfile = new EditProfile();
     public static Fragment hotel = new Hotel();
     public static Fragment food = new Food();
     public static Fragment transport = new Transport();
-    public static Fragment addNotes = new AddNotes();
 
     public GetFragment()
     {
@@ -46,7 +44,7 @@ public class GetFragment
 
     public static Fragment getProfileFragment()
     {
-        return profile;
+        return new Profile();
     }
 
     public static Fragment getEditProfileFragment()
@@ -71,6 +69,6 @@ public class GetFragment
 
     public static Fragment getAddNotesFragment()
     {
-        return addNotes;
+        return new AddNotes();
     }
 }

@@ -96,7 +96,7 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
             {
                 Bundle id = new Bundle();
                 id.putString("id",bookmarkList.get(position).bookmarkId.toString());
-                Fragment addNotes = new AddNotes();
+                Fragment addNotes = GetFragment.getAddNotesFragment();
                 addNotes.setArguments(id);
                 FragmentManager.beginNewFragment(activity,addNotes);
             }
