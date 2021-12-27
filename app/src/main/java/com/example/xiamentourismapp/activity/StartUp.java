@@ -31,6 +31,6 @@ public class StartUp extends AppCompatActivity
             {
                 startActivity(new Intent(StartUp.this, Login.class));
             }
-        },0);
+        },1000);
     }
 }
