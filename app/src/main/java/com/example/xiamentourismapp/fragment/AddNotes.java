@@ -67,6 +67,7 @@ public class AddNotes extends Fragment
 
         storeDataIntoList();
         displayDataFromDb();
+        getEditText();
 
         noteId = NotesDb.checkExistingNote(uname,Integer.parseInt(bookmarkId));
 
@@ -89,6 +90,12 @@ public class AddNotes extends Fragment
             public void onClick(View view)
             {
                 getEditText();
+
+                if (noteTxt.equals(""))
+                {
+                    ToastCreator.createToast(getActivity(),"No note entered.");
+                    return;
+                }
 
                 if (checkNote == false)
                 {
