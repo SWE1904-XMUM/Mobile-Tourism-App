@@ -22,7 +22,6 @@ import android.widget.Spinner;
 import com.example.xiamentourismapp.R;
 import com.example.xiamentourismapp.adapter.HotelAdapter;
 import com.example.xiamentourismapp.constant.GetFragment;
-import com.example.xiamentourismapp.db.HotelDb;
 import com.example.xiamentourismapp.manager.FragmentManager;
 import com.example.xiamentourismapp.utils.comparator.SortComparator;
 
