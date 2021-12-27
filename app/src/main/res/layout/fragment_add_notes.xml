@@ -1,14 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.AddNotes">
+    tools:context=".fragment.AddNotes"
+    android:orientation="vertical"
+    android:gravity="center_vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/bookmarkImg"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="170dp"
+            android:src="@drawable/bookmarks_icon"/>
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/bookmarkName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="3dp"
+            android:textColor="@color/dark_blue"
+            android:text="Bookmark Name"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="3dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:text="Add your notes here:"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/notes"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Your notes"
+            android:inputType="textMultiLine"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp" />
+
+        <Button
+            android:id="@+id/addNotesBtn"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="10dp"
+            android:text="Add Notes"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

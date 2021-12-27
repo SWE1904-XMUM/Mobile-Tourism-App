@@ -48,7 +48,7 @@ public class ConnectionProvider extends SQLiteOpenHelper
         db.execSQL("create table bookmarks (bookmarkId integer primary key autoincrement, username text not null, bookmarkName text not null, bookmarkLink text not null, bookmarkPhone text not null,bookmarkImage integer not null)");
 
         // create notes table
-        db.execSQL("create table notes (noteId integer primary key autoincrement, bookmarkId not null, note text not null)");
+        db.execSQL("create table notes (noteId integer primary key autoincrement, bookmarkId integer not null, username text not null,note text not null)");
 
         //create shared preferences table
         db.execSQL("create table sharedPreferences(username text primary key, spFile text not null)");
