@@ -89,7 +89,7 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
             }
         });
 
-        holder.deleteBtnList.setOnClickListener(new View.OnClickListener()
+        holder.editBtnList.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -113,7 +113,7 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
     {
         private TextView bookmarkNameList;
         private CardView bookmarkCard;
-        private ImageView bookmarkImageList,deleteBtnList,callBtnList;
+        private ImageView bookmarkImageList,editBtnList,callBtnList;
 
         public ViewHolder(@NonNull View itemView)
         {
@@ -123,7 +123,7 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
             bookmarkNameList = itemView.findViewById(R.id.bookmarkNameList);
             bookmarkImageList = itemView.findViewById(R.id.bookmarkImageList);
             callBtnList = itemView.findViewById(R.id.bookmarkCallBtnList);
-            deleteBtnList = itemView.findViewById(R.id.deleteBtnList);
+            editBtnList = itemView.findViewById(R.id.editBtnList);
         }
     }
 }

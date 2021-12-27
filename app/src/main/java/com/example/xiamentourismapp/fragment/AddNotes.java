@@ -142,7 +142,6 @@ public class AddNotes extends Fragment
         else
         {
             String note = NotesDb.getNotesByNoteId(noteId);
-            System.out.println("Edit text: " + note);
             notes.setText(note);
             checkNote = true;
         }
