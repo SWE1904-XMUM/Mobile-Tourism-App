@@ -72,12 +72,6 @@ public class EditProfile extends Fragment
                     return;
                 }
 
-                if(UserDb.checkExistingEmail(editEmailTxt))
-                {
-                    ValidateUserProfile.setErrorBackgroundAndMessage(view,editEmail,"Email already exist, please try another.",getActivity());
-                    return;
-                }
-
                 else
                 {
                     boolean updateProfile = UserDb.updateUserProfile(uname,editPhoneNoTxt,editPwdTxt);
@@ -117,11 +111,6 @@ public class EditProfile extends Fragment
 
     private boolean validateField(View view)
     {
-        if (!ValidateUserProfile.validateEmailField(getActivity(),view,editEmail,editEmailTxt))
-        {
-            return false;
-        }
-
         if (!ValidateUserProfile.validatePhoneNoField(getActivity(),view,editPhoneNo,editPhoneNoTxt))
         {
             return false;
